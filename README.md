@@ -20,7 +20,7 @@ Everything is checked by eye before it ships: the agent builds review pages, you
   <img src="docs/images/rim_check.jpg" width="300" alt="Frame-by-frame rim check">
 </p>
 
-The one-minute explainer video and the sample recap are on the [releases page](https://github.com/bshireto/courtside-ai/releases).
+The one-minute explainer (English and Hebrew), a full sample recap with faces blurred, and one English coaching clip are on the [releases page](https://github.com/bshireto/courtside-ai/releases).
 
 ---
 
