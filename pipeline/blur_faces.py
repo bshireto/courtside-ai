@@ -143,6 +143,7 @@ def main():
     ap.add_argument("--hook", default=None)
     ap.add_argument("--det-width", type=int, default=1280)
     ap.add_argument("--crf", type=int, default=18)
+    ap.add_argument("--keep-box", action="append", default=[], help="x0,y0,x1,y1 never blurred (repeatable); e.g. the user's head when the recogniser is unsure")
     a = ap.parse_args()
 
     is_image = a.src.lower().endswith((".jpg", ".jpeg", ".png"))
@@ -174,6 +175,7 @@ def main():
         hook = getattr(mod, "hook", None)
         keep = getattr(mod, "keep", None)      # keep(i, t) -> [(x0, y0, x1, y1), ...]: nothing inside is blurred (the user's own card photo)
 
+    fixed_keep = [tuple(int(v) for v in kb.split(",")) for kb in a.keep_box]
     dur = (f1 - f0) / fps
     cmd = ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(fps), "-i", "-",
            "-ss", str(a.start), "-t", str(dur), "-i", a.src, "-map", "0:v", "-map", "1:a?",
@@ -202,7 +204,7 @@ def main():
                 if p[j] >= 0.5:
                     user_i, user_p = j, float(p[j]); n_user += 1
         user_ell = head_zone(boxes[user_i], 1.6) if user_i is not None else None
-        keep_rects = keep(i, t) if keep is not None else []
+        keep_rects = (keep(i, t) if keep is not None else []) + fixed_keep
 
         def kept(px, py):
             return any(x0 <= px <= x1 and y0 <= py <= y1 for (x0, y0, x1, y1) in keep_rects)
