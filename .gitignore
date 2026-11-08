@@ -1,0 +1,22 @@
+# game folders and anything heavy or personal never go in
+recap_*/
+analysis_*/
+review_*/
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.npz
+*.npy
+*.jsonl
+*.onnx
+*.xml
+*.bin
+pipeline/models/
+pipeline/players/
+explainer/node_modules/
+explainer/out/
+explainer/public/
+__pycache__/
+.venv/
+*.log

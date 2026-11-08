@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camera Position Guide</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#15181d; --mut:#5d6570; --line:#dde1e6; --court:#e9ddc8; --paint:#d9c3a0;
+          --mark:#ffffff; --cam:#ff6b00; --view:rgba(255,107,0,.16); --bad:#d91400; --good:#007c32; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1115; --card:#171a20; --ink:#e8ebef; --mut:#9aa3ad; --line:#2a2f37;
+          --court:#3a342a; --paint:#4a4032; --mark:#d8d8d8; --view:rgba(255,107,0,.22); } }
+  * { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui, Segoe UI, sans-serif }
+  main { max-width:1080px; margin:0 auto; padding:32px 16px 60px }
+  h1 { margin:0 0 4px; font-size:30px } .sub { color:var(--mut); margin:0 0 28px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin-bottom:22px }
+  h2 { margin:0 0 4px; font-size:21px } .card > p { color:var(--mut); margin:0 0 14px }
+  .grid { display:grid; grid-template-columns: 1.35fr 1fr; gap:22px; align-items:start }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+  svg { width:100%; height:auto; display:block }
+  ol, ul { margin:0; padding-left:20px } li { margin:0 0 8px } b { font-weight:650 }
+  .tag { display:inline-block; font-size:12px; font-weight:700; padding:2px 10px; border-radius:9999px; margin-right:6px }
+  .good { background:color-mix(in srgb, var(--good) 15%, transparent); color:var(--good) }
+  .bad { background:color-mix(in srgb, var(--bad) 15%, transparent); color:var(--bad) }
+  .check { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px }
+  .check div { border:1px solid var(--line); border-radius:6px; padding:12px }
+  .check strong { display:block; margin-bottom:4px }
+  .legend { color:var(--mut); font-size:13px; margin-top:8px }
+</style>
+</head>
+<body>
+<main>
+<h1>Where to put the camera</h1>
+<p class="sub">Same spot every game, so the recap tools can reuse the court map. Phone horizontal, 1080p (60 fps if the phone offers it), no zoom, exposure and focus locked.</p>
+
+<section class="card">
+  <h2>Half court</h2>
+  <p>One basket. Camera beside the court, level with the free-throw line, looking at the rim from about 30 degrees.</p>
+  <div class="grid">
+    <svg viewBox="0 0 520 420" role="img" aria-label="Half court diagram with camera position">
+      <rect x="20" y="20" width="400" height="330" fill="var(--court)" stroke="var(--mark)" stroke-width="3"/>
+      <rect x="160" y="20" width="120" height="150" fill="var(--paint)" stroke="var(--mark)" stroke-width="3"/>
+      <circle cx="220" cy="170" r="60" fill="none" stroke="var(--mark)" stroke-width="3"/>
+      <path d="M 50 20 L 50 90 A 190 190 0 0 0 390 90 L 390 20" fill="none" stroke="var(--mark)" stroke-width="3"/>
+      <line x1="195" y1="32" x2="245" y2="32" stroke="var(--mark)" stroke-width="4"/>
+      <circle cx="220" cy="46" r="11" fill="none" stroke="var(--cam)" stroke-width="3"/>
+      <text x="220" y="16" text-anchor="middle" font-size="12" fill="var(--mut)">baseline / basket</text>
+      <text x="220" y="372" text-anchor="middle" font-size="12" fill="var(--mut)">half-court line</text>
+      <polygon points="486,172 190,20 20,210" fill="var(--view)"/>
+      <line x1="420" y1="170" x2="486" y2="172" stroke="var(--mut)" stroke-dasharray="4 4"/>
+      <text x="452" y="162" text-anchor="middle" font-size="12" fill="var(--mut)">~3 m</text>
+      <rect x="474" y="160" width="26" height="24" rx="4" fill="var(--cam)"/>
+      <text x="487" y="204" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cam)">CAMERA</text>
+      <text x="487" y="220" text-anchor="middle" font-size="12" fill="var(--mut)">2.5–3 m high</text>
+      <line x1="280" y1="170" x2="420" y2="170" stroke="var(--mut)" stroke-dasharray="2 5"/>
+      <text x="350" y="186" text-anchor="middle" font-size="12" fill="var(--mut)">free-throw line level</text>
+    </svg>
+    <ol>
+      <li><b>Side of the court</b>, level with the free-throw line.</li>
+      <li><b>About 3 m back</b> from the sideline.</li>
+      <li><b>Lens 2.5–3 m high</b>: tripod on a bench, fence or pole. Height is what lets me see the ball drop through the net.</li>
+      <li><b>Aim at the rim</b>, turned about 30 degrees toward the basket. The rim sits in the upper third of the frame, about a third in from the side.</li>
+      <li><b>Whole three-point arc in frame</b>, both corners included. That's how 2s and 3s get told apart.</li>
+      <li><b>Plain background behind the rim</b>: a dark wall or tent, not the floodlights.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Full court</h2>
+  <p>Both baskets. Camera at the centre line, far back and high, seeing both baselines.</p>
+  <div class="grid">
+    <svg viewBox="0 0 520 330" role="img" aria-label="Full court diagram with camera position">
+      <rect x="20" y="20" width="480" height="230" fill="var(--court)" stroke="var(--mark)" stroke-width="3"/>
+      <line x1="260" y1="20" x2="260" y2="250" stroke="var(--mark)" stroke-width="3"/>
+      <circle cx="260" cy="135" r="30" fill="none" stroke="var(--mark)" stroke-width="3"/>
+      <rect x="20" y="95" width="90" height="80" fill="var(--paint)" stroke="var(--mark)" stroke-width="3"/>
+      <rect x="410" y="95" width="90" height="80" fill="var(--paint)" stroke="var(--mark)" stroke-width="3"/>
+      <path d="M 20 35 L 60 35 A 110 110 0 0 1 60 235 L 20 235" fill="none" stroke="var(--mark)" stroke-width="3"/>
+      <path d="M 500 35 L 460 35 A 110 110 0 0 0 460 235 L 500 235" fill="none" stroke="var(--mark)" stroke-width="3"/>
+      <circle cx="36" cy="135" r="8" fill="none" stroke="var(--cam)" stroke-width="3"/>
+      <circle cx="484" cy="135" r="8" fill="none" stroke="var(--cam)" stroke-width="3"/>
+      <polygon points="260,300 10,20 510,20" fill="var(--view)"/>
+      <rect x="247" y="288" width="26" height="24" rx="4" fill="var(--cam)"/>
+      <line x1="260" y1="250" x2="260" y2="288" stroke="var(--mut)" stroke-dasharray="4 4"/>
+      <text x="300" y="274" font-size="12" fill="var(--mut)">4–5 m back</text>
+      <text x="200" y="304" text-anchor="end" font-size="13" font-weight="700" fill="var(--cam)">CAMERA</text>
+      <text x="200" y="320" text-anchor="end" font-size="12" fill="var(--mut)">as high as possible</text>
+    </svg>
+    <ol>
+      <li><b>Centre line</b>, on the side of the court.</li>
+      <li><b>4–5 m back</b> from the sideline, far enough that both baselines fit in frame.</li>
+      <li><b>As high as possible</b> (3 m+). Height keeps the far rim readable.</li>
+      <li><b>Level horizon</b>, both rims at similar height in the frame.</li>
+      <li>If you can't get far enough back, use a <b>second phone at the other end</b> rather than zooming out.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Avoid</h2>
+  <p>What made the first game hard to analyse.</p>
+  <div class="check">
+    <div><span class="tag bad">Don't</span><strong>Under a basket, shooting lengthwise</strong>The far rim shrinks to about 15 pixels, so makes and misses can't be read. This happened in the second half of 23.09.</div>
+    <div><span class="tag bad">Don't</span><strong>Moving the camera mid-session</strong>Each new position needs a new court map. If you must, stop recording, move, start a new clip.</div>
+    <div><span class="tag bad">Don't</span><strong>People standing in front</strong>Keep the sideline in front of the camera clear. Bags, benches and spectators block the rim.</div>
+    <div><span class="tag bad">Don't</span><strong>Zoom, vertical, auto-exposure</strong>Digital zoom loses detail, and exposure pumps when the floodlights enter the frame.</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Before you press record</h2>
+  <div class="check">
+    <div><span class="tag good">Check</span><strong>Both rims fully visible</strong>Including the whole net below them.</div>
+    <div><span class="tag good">Check</span><strong>Whole three-point arc visible</strong>For every basket you're recording.</div>
+    <div><span class="tag good">Check</span><strong>Phone plugged in, storage free</strong>A 30-minute 1080p game is about 4 GB.</div>
+    <div><span class="tag good">Check</span><strong>Photo of the teams</strong>One shot of each player in their pinnie before tip-off makes naming them instant.</div>
+  </div>
+  <p class="legend">Diagrams are schematic, not to scale.</p>
+</section>
+</main>
+</body>
+</html>

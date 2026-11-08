@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research: analysing an amateur offense reel</title>
+<style>@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+:root{--grey-0:#FFFFFF;--grey-5:#FAFBFD;--grey-10:#F4F6FA;--grey-15:#EEF2F7;--grey-20:#E3E9F1;--grey-50:#D3DCE7;--grey-100:#B5C0CE;
+--grey-500:#718096;--grey-700:#4A5568;--grey-800:#2D3A4E;--grey-900:#10213A;--navy:#002D62;--thunder:#007AC1;--sunset:#EF3B24;--sun:#FDBB30;
+--pumpkin-orange:var(--sunset);--mandarin-orange:var(--thunder);
+--blue-link:#005F99;--blue-interactive:var(--thunder);--green-positive:#007C32;--green-bg:#E6F2EC;--red-negative:#D91400;--red-bg:#FBE7E6;
+--yellow-warn:var(--sun);--purple-ai:#6244FF;--stroke-weak:#E3E9F1;--stroke-medium:#D3DCE7;--text-primary:var(--grey-900);
+--text-secondary:var(--grey-700);--text-tertiary:var(--grey-500);--surface-page:var(--grey-0);--surface-well:var(--grey-10);
+--surface-alt:var(--grey-5);--surface-dark:var(--navy);--border-default:var(--stroke-weak);--border-strong:var(--stroke-medium);
+--r-1:4px;--r-2:6px;--r-3:16px;--r-pill:9999px;--shadow-sm:0 1px 2px rgba(0,45,98,.06);
+--font-sans:"Heebo","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+--viz-1:#007AC1;--viz-2:#EF3B24;--viz-3:#002D62;--viz-4:#718096;--viz-5:#007C32;--viz-6:#FDBB30;--viz-track:#E9EEF5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--font-sans);font-size:16px;line-height:1.6;color:var(--text-primary);background:var(--surface-well);-webkit-font-smoothing:antialiased}
+.num,table{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+strong,b{font-weight:600}
+a{color:var(--blue-link)}
+.up{color:var(--green-positive)} .down{color:var(--red-negative)}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border-default)}
+.topbar-in{max-width:1100px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:16px}
+.topbar-title{font-size:14px;font-weight:600;flex:0 0 auto;max-width:36%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar nav{display:flex;gap:4px;flex-wrap:wrap;flex:1;justify-content:flex-end}
+.topbar nav a{font-size:12.5px;font-weight:600;color:var(--text-secondary);text-decoration:none;padding:5px 9px;border-radius:var(--r-1)}
+.topbar nav a:hover{background:var(--surface-well);color:var(--text-primary)}
+.dot{width:10px;height:10px;border-radius:var(--r-pill);background:var(--sunset);box-shadow:0 0 0 3px #FDBB30 inset;display:inline-block}
+.hero{background:var(--surface-page);border-bottom:1px solid var(--border-default);padding:40px 0 30px;margin-bottom:28px}
+.hero-in,.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.wrap{padding-bottom:96px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pumpkin-orange);margin-bottom:10px}
+.hero h1{font-size:32px;font-weight:700;letter-spacing:-.015em;line-height:1.2;margin-bottom:12px}
+.hero .sub{font-size:17px;line-height:1.6;color:var(--text-secondary);max-width:820px}
+.hero .sub strong{color:var(--text-primary)}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pill{background:var(--surface-well);border:1px solid var(--border-default);border-radius:var(--r-pill);padding:4px 12px;font-size:12px;font-weight:500;color:var(--text-secondary)}
+.pill strong{color:var(--text-primary);font-weight:600}
+.pill.brand{background:#E6F2FA;border-color:#B9DDF3;color:#004A7A}
+.card{background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--r-3);padding:28px 32px;margin-bottom:24px;box-shadow:var(--shadow-sm)}
+.card h2{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin-bottom:6px}
+.card h3{font-size:17px;font-weight:700;margin:22px 0 8px}
+.card h4{font-size:15px;font-weight:700;margin:16px 0 6px}
+.card p{margin-bottom:10px;color:var(--text-primary)}
+.card .lead{font-size:17px;color:var(--text-secondary);margin-bottom:16px;max-width:80ch}
+.card ul,.card ol{margin:6px 0 12px;padding-inline-start:22px}
+.card li{margin-bottom:5px}
+.label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);margin:18px 0 10px}
+.tldr{background:var(--surface-dark);color:#fff;border-radius:var(--r-3);padding:24px 28px;margin-bottom:28px}
+.tldr h2{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sun);margin-bottom:14px}
+.tldr p{color:#fff;font-size:17px;line-height:1.55;margin-bottom:10px}
+.tldr .muted{color:#C9D6E5;font-size:14px}
+.tldr-row{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);align-items:start}
+.tldr-row:first-of-type{border-top:0}
+.tldr-n{width:24px;height:24px;border-radius:var(--r-pill);background:var(--sunset);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.tldr-q{font-size:15px;font-weight:600;color:#fff;line-height:1.45}
+.tldr-q small{display:block;font-weight:400;color:#C9D6E5;font-size:13.5px;margin-top:2px}
+.stats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin:12px 0 18px}
+.stat{border:1px solid var(--border-default);border-radius:var(--r-2);padding:14px 16px;background:var(--surface-page)}
+.stat-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:6px}
+.stat-value{font-size:28px;font-weight:700;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat-sub{font-size:12.5px;color:var(--text-secondary);margin-top:5px}
+.stat.pos .stat-value{color:var(--green-positive)} .stat.neg .stat-value{color:var(--red-negative)}
+.stat.accent{border-color:#B9DDF3;background:#F1F8FD}
+table.t{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;margin:8px 0 16px}
+table.t th,table.t td{border-bottom:1px solid var(--border-default);padding:9px 10px;text-align:start;vertical-align:top}
+table.t th{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-tertiary);border-bottom:1px solid var(--border-strong)}
+table.t td.c{text-align:center}
+.good{background:var(--green-bg);color:var(--green-positive);font-weight:600}
+.mid{background:var(--surface-well);color:var(--text-secondary)}
+.bad{background:var(--red-bg);color:var(--red-negative)}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;border-radius:var(--r-pill);padding:2px 9px;background:var(--surface-well);border:1px solid var(--border-default);color:var(--text-secondary);margin:2px 4px 2px 0}
+.tag.pos{background:var(--green-bg);border-color:#C3DED0;color:var(--green-positive)}
+.tag.neg{background:var(--red-bg);border-color:#F3C9C6;color:var(--red-negative)}
+.tag.warn{background:#FFF4D6;border-color:#FDDC8A;color:#5A3E00}
+.badge{background:var(--green-positive);color:#fff;font-size:11px;font-weight:700;letter-spacing:.03em;padding:2px 9px;border-radius:var(--r-pill);text-transform:uppercase}
+.badge.grey{background:var(--grey-500)} .badge.red{background:var(--red-negative)} .badge.orange{background:var(--pumpkin-orange)}
+.bars{display:flex;flex-direction:column;gap:9px;margin:10px 0 16px}
+.bar-row{display:grid;grid-template-columns:minmax(120px,240px) 1fr auto;gap:12px;align-items:center;font-size:13.5px}
+.bar-name{color:var(--text-secondary);text-align:end}
+.bar-track{background:var(--viz-track);border-radius:var(--r-1);height:18px;position:relative;overflow:hidden}
+.bar{height:100%;border-radius:var(--r-1);background:var(--viz-1);min-width:3px}
+.bar.pos{background:var(--green-positive)} .bar.neg{background:var(--red-negative)} .bar.c2{background:var(--viz-2)} .bar.c4{background:var(--viz-4)}
+.bar-val{font-weight:600;font-size:13px;white-space:nowrap;min-width:44px}
+.fix{border:1px solid var(--border-default);border-radius:var(--r-2);padding:18px 20px;margin-bottom:14px;background:var(--surface-page);display:grid;grid-template-columns:44px 1fr;gap:16px}
+.fix-n{width:40px;height:40px;border-radius:var(--r-1);background:var(--thunder);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700}
+.fix h3{margin:0 0 6px;font-size:18px}
+.fix .cue{display:inline-block;background:#FFF4D6;border:1px solid #FDDC8A;color:#5A3E00;border-radius:var(--r-1);padding:6px 12px;font-weight:600;margin:8px 0}
+.fix .why{color:var(--text-secondary);font-size:15px}
+.frames{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));margin:12px 0 18px}
+.frame-card{border:1px solid var(--border-default);border-radius:var(--r-2);overflow:hidden;background:var(--surface-page)}
+.frame-card img{display:block;width:100%;height:auto}
+.frame-cap{padding:9px 12px;font-size:13.5px;line-height:1.45}
+.frame-cap b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:3px}
+.frame-card.pos .frame-cap b{color:var(--green-positive)} .frame-card.neg .frame-cap b{color:var(--red-negative)}
+.viz{border:1px solid var(--border-default);border-radius:var(--r-2);padding:18px;margin:12px 0 18px;background:var(--surface-page);overflow-x:auto}
+.viz img{display:block;width:100%;height:auto;border-radius:var(--r-1)}
+.viz-cap{font-size:13px;color:var(--text-tertiary);margin-top:12px;line-height:1.5}
+.viz-title{font-size:14px;font-weight:600;margin-bottom:12px}
+details.more{border:1px solid var(--border-default);border-radius:var(--r-1);margin:10px 0 16px;background:var(--surface-alt)}
+details.more>summary{cursor:pointer;padding:10px 14px;font-size:14px;font-weight:600;color:var(--text-secondary);list-style:none}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"+ ";color:var(--pumpkin-orange);font-weight:700}
+details.more[open]>summary::before{content:"\2013  "}
+details.more .more-body{padding:0 14px 14px;font-size:14.5px;line-height:1.6;color:var(--text-secondary)}
+.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.callout{border-inline-start:3px solid var(--thunder);background:var(--surface-well);border-radius:var(--r-1);padding:12px 16px;margin:10px 0 16px;font-size:15.5px}
+.callout.green{border-color:var(--green-positive)} .callout.red{border-color:var(--red-negative)}
+.verdict{font-size:12px;font-weight:700;border-radius:var(--r-pill);padding:2px 8px;text-transform:uppercase;letter-spacing:.04em}
+.verdict.confirmed{background:var(--green-bg);color:var(--green-positive)} .verdict.partly{background:#FFF4D6;color:#5A3E00}
+.verdict.refuted{background:var(--red-bg);color:var(--red-negative)} .verdict.not_visible{background:var(--surface-well);color:var(--text-secondary)}
+.md h1{font-size:26px;margin:10px 0 14px} .md h2{font-size:22px;margin:28px 0 10px;padding-top:8px;border-top:1px solid var(--border-default)}
+.md h3{font-size:17px;margin:20px 0 8px} .md p{margin-bottom:10px} .md ul,.md ol{margin:6px 0 12px;padding-inline-start:22px} .md li{margin-bottom:5px}
+.md table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;margin:8px 0 16px}
+.md th,.md td{border-bottom:1px solid var(--border-default);padding:8px 10px;text-align:start;vertical-align:top}
+.md th{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-tertiary)}
+.md code{font-family:Consolas,"SF Mono",monospace;font-size:13px;background:var(--surface-well);padding:1px 5px;border-radius:3px}
+.md blockquote{border-inline-start:3px solid var(--grey-50);padding:4px 14px;color:var(--text-secondary);margin:8px 0 12px}
+.foot{font-size:13px;color:var(--text-tertiary);margin-top:30px}
+@media (max-width:720px){.hero h1{font-size:25px}.card{padding:20px 18px}.fix{grid-template-columns:1fr}.bar-row{grid-template-columns:minmax(80px,120px) 1fr auto}}
+@media print{.topbar{display:none}body{background:#fff}.card{break-inside:avoid;box-shadow:none}details.more{display:block}details.more>.more-body{display:block}}
+</style></head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="dot"></span><div class="topbar-title">Research: analysing an amateur offense reel</div><nav><a href="#1-what-the-research-says-in-one-page">What the research says in </a><a href="#2-how-to-break-down-one-players-offense-reel">How to break down one play</a><a href="#3-feedback-that-changes-behaviour">Feedback that changes beha</a><a href="#4-drill-library-mapped-to-weakness-types">Drill library mapped to we</a><a href="#5-output-formats-compared">Output formats, compared</a><a href="#6-what-a-single-wide-camera-can-and-cannot-measure">What a single wide camera </a><a href="#7-benchmarks-and-the-maths-of-shot-selection">Benchmarks and the maths o</a><a href="#8-rebuilding-the-jump-shot-as-an-adult">Rebuilding the jump shot a</a><a href="#9-interesting-extras">Interesting extras</a><a href="#10-sources">Sources</a></nav></div></div>
+<header class="hero"><div class="hero-in"><div class="eyebrow">Basketball analysis · research · 09.10.2026</div><h1>How to analyse one player's offense reel, and what to give him back</h1><p class="sub">Seven research angles, each load-bearing claim fact-checked by an independent agent, a gap-fill round, then one synthesis. <strong>Fact-check tally: confirmed 11, partly 33.</strong> Claims marked (unverified) could not be confirmed against their source.</p><div class="pills"><span class="pill">7 angles</span><span class="pill">claims fact-checked</span><span class="pill brand">single wide camera</span></div></div></header>
+<div class="wrap">
+<section class="card md"><h1 id="post-game-offense-review-for-a-pickup-player-validated-research-report">Post-game offense review for a pickup player: validated research report</h1>
+<p>Scope: one fixed sideline phone (1920x1080, 30 fps, players 100-160 px), an adult recreational player, a weekly 4-on-4 game, an existing YOLO11/ffmpeg pipeline that already produces a 27-clip offense reel. Seven research sweeps, 44 load-bearing claims fact-checked, one gap-fill round. Where a check downgraded a claim, the corrected version is used here. One caveat applies to the whole document: no study of adult recreational players coaching themselves from their own video was found; every feedback, practice-schedule and self-modeling result below comes from youth, novices, students or lab tasks, so the workflow is an extrapolation.</p>
+<h2 id="1-what-the-research-says-in-one-page">1. What the research says in one page</h2>
+<ol>
+<li>A 13-shot game is noise. 5/13 carries a 95% Wilson interval of 18-64%; 2/5 from three is 12-77%; ten games (50/130) only narrow to 31-47%. Over half of the between-player variation in NBA 3P% within a season is chance, and 3P% needs roughly 750 attempts to stabilise (<a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a>). Per-game reports should show intervals and grade decisions, never lead with FG%.</li>
+<li>Grade shots by expected points, not make/miss. Synergy Shot Quality is a per-league, per-shot-type logistic model (distance, guarded/unguarded, catch-and-shoot vs off the dribble, play type, sub-5 s clock) that deliberately ignores who is shooting; Shot Making = actual PPS minus expected PPS (<a href="https://sportradar.com/content-hub/blog/explaining-synergy-shot-quality/?lang=en-us">Sportradar</a>). The same split tells a 5/13 night apart as bad selection or bad making.</li>
+<li>The shot he takes most is the worst shot in the reference tables. NBA 2024-25: catch-and-shoot threes 37.4% (1.12 PPS), pull-up threes 32.9% (0.99), pull-up twos 42.5% (0.85), paint 57.1% (<a href="https://www.nba.com/news/best-shooters-of-the-2024-25-season">NBA.com</a>). Touch time under 2 s ran .54 eFG% vs about .44 for 2-6 s and 6+ s in a Dec 2014 snapshot that includes transition, so it is descriptive, not causal (<a href="http://web.archive.org/web/20150114072540/http://www.basketballanalyticsbook.com/2014/12/18/individual-touch-time-before-the-shot-cleveland-is-improving-atlanta-is-thriving-and-charlotte-is-struggling/">Shea via Wayback</a>). The lever is his share of long-hold, multi-dribble attempts, trended across games, not a ban on pull-ups.</li>
+<li>Process metrics move in 3-4 games; percentages take months. A share-type metric at 13 attempts has the same per-game noise as FG%, but moving the pull-up share from ~60% to ~30% is a 30-point shift that clears a Wilson band in about 40-50 attempts, while a 5-point FG% gain needs 300+ attempts (binomial reasoning; no source gives stabilisation points for process metrics, <a href="https://www.bball-index.com/creating-more-predictive-stats/">Basketball Index</a>).</li>
+<li>Fewer, cued clips beat the whole reel. Video feedback appears more effective than verbal alone only when it carries short verbal cues; video-only produced no improvement in one adult study (<a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Mödinger et al.</a>). The 2026 Frontiers framework prescribes 10-20 s clips, one attentional cue per viewing, at most two replays, and a "Strength: X; Improvement: Y" prompt (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1775088/full">Tannoubi et al.</a>). The current 27-clip reel with "+2 PTS" pop-ups is the format the review flags as possibly ineffective.</li>
+<li>Three teaching points, 10-15 minutes, corrections followed by the same action done right. Each number is single-sourced (PGC, Better Basketball, Hudl's one-on-one piece) and all from youth coaching (<a href="https://pgcbasketball.com/blog/five-ways-to-improve-film-sessions-with-your-players/">PGC</a>, <a href="https://www.hudl.com/blog/how-to-use-video-in-one-on-one-settings-to-maximize-player-development">Hudl</a>). No sport trial supports a fixed 3:1 positive ratio; Wooden's coded acts were 6.9% praise and ~75% information, but feedback after good trials does improve retention, so valence matters alongside content (<a href="https://marshallmemo.com/issues/900e517d13cd992db0961d47ad0ac2ef/MarshMemo544.pdf">Marshall Memo on Gallimore &amp; Tharp</a>).</li>
+<li>Keep the best-plays reel separate from the corrective edit. Raw self-footage produced more negative than positive self-evaluation (15.6% vs 6%); a best-clips edit reversed it and raised positive-feeling statements from 2.5% to 15.9% (n=10, exploratory) (<a href="https://thescopes.org/assets/Uploads/36170e3d44/Middlemas.pdf">Middlemas 2017</a>). Self-modeling effects are dose-dependent and fade within a week, so the reel must be re-cut every game (<a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1809566/full">Wang et al. 2026</a>).</li>
+<li>Make him guess before the reveal. Learners required to estimate their own error before seeing the result retained best; those given the result without estimating retained worst (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Guadagnoli%22%20AND%20TITLE:%22error%20estimation%22&amp;resultType=core&amp;format=json">Guadagnoli &amp; Kohl 2001</a>). Coaches overestimate their own good feedback by 5-40%, so the absence of a coach costs less than it looks, provided the system shows clip plus number (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.571552/full">Mason, Farrow &amp; Hattie 2020</a>).</li>
+<li>Cue the ball, rim and floor, not the elbow. External-focus cues beat body-part cues across ~80 experiments (performance g about 0.26, learning g about 0.58); in basketball the evidence is thin (one 10-shot free-throw study, 25.6% vs 20.9%), and "more distal is better" is a separate small effect (<a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Wulf 2013 review; Chua 2021 meta-analysis</a>). Modest effect, zero cost: reword every caption.</li>
+<li>Keep the fun outputs number-free. Measuring an enjoyable activity raised output but lowered enjoyment and continued engagement in six experiments, and the penalty vanished only when the activity was framed as work (<a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a>). The Top 10 and shared recap stay stat-free; the quantified layer is a separate "training review" he opens by choice.</li>
+<li>The wide camera measures time, position and ball flight; it does not measure form. Pose from a sideline phone gives usable shoulder angles but coarse elbow (RMSE 16-21 deg) and useless wrist angles (RMSE 63-85 deg) even with the subject filling the frame (<a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo thesis</a>); at 100-160 px, skeletons are visual aids only. Hold time (+/-33 ms), dribble count, take-off position and short/long miss class are the trustworthy outputs.</li>
+<li>Fix form in practice, with feedback inside a second; use the game report for decisions. Noah's founder: fine-motor feedback later than ~0.5 s is "essentially worthless" (<a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah/Sheppard</a>). A second phone at 240 fps, side-on, 2-4 m away, is the only way to see the July findings.</li>
+<li>Rebuilding an automated shot is a staged, up-to-12-month project in which performance drops first and the old pattern returns under pressure unless practice is representative (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins, Five-A</a>). One change at a time; in-season tweaks only.</li>
+<li>Spaced beats massed (d = 0.46 overall, 0.97 for simple psychomotor tasks, shrinking with complexity), so 5-minute form blocks on 3-4 days beat one 25-minute session (<a href="https://www.gwern.net/docs/spaced-repetition/1999-donovan.pdf">Donovan &amp; Radosevich 1999</a>).</li>
+<li>Legs are a shooting input and a depreciating one. Release height is the kinematic variable tied to makes (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641682/">Amaro 2025</a>); lower-limb power falls about 1%/year after 30 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8047469/">Alvero-Cruz 2021</a>); strength training cuts sports injuries to under a third (RR 0.315) while stretching does nothing (RR 0.963) (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22The%20effectiveness%20of%20exercise%20interventions%20to%20prevent%20sports%20injuries%22&amp;resultType=core&amp;format=json">Lauersen 2014</a>).</li>
+</ol>
+<h2 id="2-how-to-break-down-one-players-offense-reel">2. How to break down one player's offense reel</h2>
+<h3 id="per-possession-tagging-scheme">Per-possession tagging scheme</h3>
+<p>One row per offensive possession (Synergy logs a possession only when it ends in a shot, turnover or shooting foul; passes that lead to a teammate's shot are logged under the shooter, so add an explicit assist/creation field). Fields marked M are measurable from the wide camera, J are judged by eye (Claude over contact sheets), C need the close-up camera.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Allowed values</th>
+<th>Source of the bins</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>play_type</td>
+<td>isolation, P&amp;R handler, spot-up, cut, transition, putback, hand-off, off-screen, post-up, misc</td>
+<td>Synergy; jab/size-up spot-ups and broken actions are logged as isolation (<a href="https://fansided.com/2017/09/08/nylon-calculus-understanding-synergy-play-type-data/">Nylon Calculus</a>)</td>
+<td>J</td>
+</tr>
+<tr>
+<td>end_action</td>
+<td>shot, pass-to-shot (assist / drop-off / lob), turnover, foul drawn, reset</td>
+<td>pipeline</td>
+<td>M/J</td>
+</tr>
+<tr>
+<td>dribbles</td>
+<td>0, 1, 2, 3-6, 7+</td>
+<td>NBA tracking bins (<a href="https://nba-stats-tracking.readthedocs.io/en/stable/source/modules.html">nba_stats_tracking</a>)</td>
+<td>M</td>
+</tr>
+<tr>
+<td>touch_time_s</td>
+<td>seconds from catch to release or first decisive action; bins &lt;2, 2-6, 6+</td>
+<td>same; replaces the shot-clock bin in pickup</td>
+<td>M</td>
+</tr>
+<tr>
+<td>decision_latency_s</td>
+<td>catch to first shoot/drive/pass action; flag &gt;0.5 s on catches</td>
+<td>Popovich "point-five" heuristic, not a measured standard (<a href="https://www2.kusports.com/weblogs/tale-tait/2021/nov/05/pass-drive-or-shoot-kus-bill-self-emphas/">KU Sports</a>)</td>
+<td>M</td>
+</tr>
+<tr>
+<td>shot_class</td>
+<td>catch-and-shoot (jumper &gt;10 ft, &lt;=2 s, 0 dribbles), pull-up (jumper &gt;10 ft, &gt;=1 dribble), &lt;10 ft, floater, layup</td>
+<td>derived, NBA definitions</td>
+<td>M</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>restricted area, paint non-RA, mid-range, corner 3, above-break 3</td>
+<td>from take-off ankle position via court homography, not from the release frame</td>
+<td>M</td>
+</tr>
+<tr>
+<td>defender_band</td>
+<td>0-2, 2-4, 4-6, 6+ ft at release, estimated from box separation; flag as estimate</td>
+<td>NBA bins; depth along the camera axis is compressed</td>
+<td>J</td>
+</tr>
+<tr>
+<td>contest_at_minus_0_6s</td>
+<td>defender within 6 ft 0.6 s before release: yes/no</td>
+<td>Lucey et al. (<a href="https://la.disneyresearch.com/wp-content/uploads/How-to-Get-an-Open-Shot-Analyzing-Team-Movement-in-Basketball-using-Tracking-Data-Paper.pdf">Sloan 2014</a>)</td>
+<td>J</td>
+</tr>
+<tr>
+<td>paint_touch_before</td>
+<td>yes/no (his drive, a pass into the paint, or a skip after one)</td>
+<td>ShotTracker D1 study (<a href="https://shottracker.com/ball-reversals-or-paint-touches-use-analytics-to-learn-what-drives-efficiency-for-your-team/">link</a>)</td>
+<td>M</td>
+</tr>
+<tr>
+<td>result</td>
+<td>make, miss-short, miss-long, miss-left, miss-right, BRAD, airball, ambiguous (rattled/occluded)</td>
+<td>Noah outputs; Roboflow tag set (<a href="https://roboflow.com/blog/how-to-build-an-ai-basketball-shot-evaluator">Roboflow</a>)</td>
+<td>M</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>two-foot take-off and landing, landing within ~1 ft of take-off, no lateral drift: yes/no</td>
+<td>ROBR "Balance" (<a href="https://pgcbasketball.com/blog/how-to-coach-winning-shot-selection/">PGC</a>)</td>
+<td>J</td>
+</tr>
+<tr>
+<td>shot_grade</td>
+<td>1-9 Devenzio scale (9 open layup, 7 open jumper in range, 5 "practice shot", 3 bad shot), earned vs available flag</td>
+<td><a href="https://betterbasketball.com/?p=3513">Better Basketball</a>, <a href="https://pgcbasketball.com/blog/good-shots-vs-great-shots/">PGC</a></td>
+<td>J</td>
+</tr>
+<tr>
+<td>expected_points</td>
+<td>from a zone x contest x shot-class lookup (section 7)</td>
+<td>Synergy SSQ architecture</td>
+<td>M</td>
+</tr>
+<tr>
+<td>arc_entry_deg</td>
+<td>numeric only for top-of-key shots whose plane is near-perpendicular to the camera; elbow shots corrected for foreshortening; wing/corner = "not measurable"</td>
+<td>Noah patent single-camera condition (<a href="https://patents.google.com/patent/US9283432B2/en">US9283432</a>)</td>
+<td>M</td>
+</tr>
+<tr>
+<td>four_cue_read</td>
+<td>defender pressure, range, rebounders in place, floor balance: each yes/no</td>
+<td>untrained observers weigh only the first two (<a href="https://archives.rpd-online.com/article/download/1335/1335-3994-1-PB.pdf">Llorca-Miralles 2013</a>)</td>
+<td>J</td>
+</tr>
+<tr>
+<td>self_grade / self_miss_class</td>
+<td>his pre-reveal guess, logged against the system</td>
+<td>error-estimation effect</td>
+<td>-</td>
+</tr>
+<tr>
+<td>defender_id</td>
+<td>roster id of the on-ball defender</td>
+<td>private build only; never rendered</td>
+<td>J</td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-game-roll-ups">Per-game roll-ups</h3>
+<p>Tendencies: shot mix by shot_class and zone; rim+three share ("Moreyball rate", pro teams run 75-86%, <a href="https://www.hudl.com/blog/beyond-the-arc-what-actually-wins-in-europe">Hudl EuroLeague</a>); share of attempts with 3+ dribbles or 6+ s hold; catch-and-shoot share; paint-touch share of possessions (D1 teams ~40%, 1.06 PPP with a paint touch vs 0.71 without); drive direction split; decision latency histogram. Shot quality: expected points created, actual points, Shot Making delta, mean shot grade of attempts and of makes separately. Decision quality: count of possessions ending in a grade &lt;=4 shot, pass-outs of good-not-great shots (credited as positives), turnovers per possession used. Rim outcomes: short/long/left/right mix across the last 3-4 games (direction of misses is informative at small samples; percentages are not). Fatigue split: game 1 vs game 3 for hold time, arc, short-miss share; a 12-minute simulated-game protocol flattened guards' entry angle 45.2 to 43.4 deg and slowed release 0.6 to 0.7 s (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10974731">Bourdas 2024</a>). A tendency is promoted to a "weakness" only with 3+ supporting clips across games (the NBA trainer's volume rule, <a href="https://lowmanhelp.substack.com/p/the-core-of-every-player-development">Lowman</a>).</p>
+<h3 id="order-of-the-review">Order of the review</h3>
+<ol>
+<li>Before opening anything, he types three strengths and three fixes from memory (self-SWOT first; reduces anxiety and gives a self-awareness score over time, <a href="https://lowmanhelp.substack.com/p/the-core-of-every-player-development">Lowman</a>).</li>
+<li>Two process goals chosen before the game are scored first, with their clips.</li>
+<li>Three cards, most important first: each one clip pair (the possession as played, then the same action done right, by him if available), one external cue of &lt;=20 words, one drill with a make target. Corrections grouped and immediately followed by the correct version (<a href="https://betterbasketball.com/film-breakdown-part-2-conducting-team-video-sessions/">Better Basketball</a>).</li>
+<li>Strengths appear as "keep doing" instructions with their own clip, not as praise.</li>
+<li>Everything else collapsed. Total viewing 10-15 minutes. "Film to floor": review in the slot before the next practice or game.</li>
+<li>The best-plays reel is a separate artefact, watched before the next game, not after this one.</li>
+</ol>
+<h2 id="3-feedback-that-changes-behaviour">3. Feedback that changes behaviour</h2>
+<p>Nearly all of this evidence comes from children, students or novices on closed skills; no study covers an adult coaching himself from his own game film (<a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a>). The directions agree. Read the effect sizes as ceilings.</p>
+<h3 id="31-cue-design">3.1 Cue design</h3>
+<p>Cues aimed at the ball, rim or floor beat cues aimed at the wrist, elbow or hand: across about 80 experiments the external-focus advantage is g ≈ 0.26 for performance and 0.58 for learning, unmoderated by skill level (<a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Chua et al. 2021</a>). Basketball evidence is thin: one within-subject study got 25.6% vs 20.9% free-throw accuracy focusing on the hoop rather than the wrist (<a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2014/05/Wulf_AF_review_IRSEP_2013.pdf">Zachry 2005 in Wulf 2013</a>). Wording alone moves form: identical feedback phrased about "the sneakers" instead of "feet, hips, knees and shoulders" scored 5.95 vs 5.05 on transfer form, accuracy unchanged, 12 children per group (<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2010.00190/full">Wulf 2010</a>).</p>
+<p>Caption rules, relayed from Blischke 1999 as background rather than as a review finding: about 20 words, picture above text, one parameter per correction (<a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a>), shaped verb + preposition + landmark (<a href="https://smartervolley.substack.com/p/99-external-cues">Winkelman summary</a>). A clip without a cue may do nothing: video-only feedback produced no gain in an adult strength study where verbal and video-plus-cues did (<a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Rucci &amp; Tomporowski 2010, in Mödinger</a>). One analogy beats a rule list: analogy learners of a basketball shot matched explicit learners on retention and held up under pressure while the explicit group deteriorated (<a href="https://scholars.hkbu.edu.hk/en/publications/analogy-learning-and-the-performance-of-motor-skills-under-pressu/">Lam, Maxwell &amp; Masters 2009</a>); the Five-A model uses holistic rhythm words because part-skill cues "fragment the movement under stress" (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a>). Rehearsed instructional cue words help fine skills (self-talk ES .48) (<a href="https://www.psychologicalscience.org/index.php/news/releases/thoughts-that-win.html">Hatzigeorgiadis 2011, APS summary</a>). So "elbow in" and "silent guide hand" stay in the practice notes; the game-day cue is one external phrase or one analogy.</p>
+<h3 id="32-how-much-how-often">3.2 How much, how often</h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Numbers</th>
+<th>Source, caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feedback only on errors in 4 key positions beat feedback on everything</td>
+<td>+6% at retention (d = 3.18), +7% a week later (d = 3.65); only this group kept improving (d = 2.37); 5.5 vs 7.9 items per session</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3796837/">Sadowski 2013</a>, 30 eleven-year-old acrobats</td>
+</tr>
+<tr>
+<td>25% relative feedback frequency "seems sufficient", avoids guidance dependency</td>
+<td>—</td>
+<td><a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Blischke 1999 via Mödinger 2021</a>, background literature</td>
+</tr>
+<tr>
+<td>Learner decides when to see feedback</td>
+<td>Retention SMD 0.63, transfer 0.68 (visual feedback 0.94); acquisition 0.20, ns</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12467369/">29 studies, n = 1,147</a>, publication bias flagged</td>
+</tr>
+<tr>
+<td>Self-controlled video, basketball set shot</td>
+<td>Video requested on 27% of trials; transfer form η² = .153 (p = .04); accuracy unchanged</td>
+<td><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00338/full">Aiken 2012</a>, 28 novice women</td>
+</tr>
+<tr>
+<td>Practitioner caps</td>
+<td>3 teaching points, ~10 min of video; 10-15 min one-on-one; 3-5 clips per topic</td>
+<td><a href="https://pgcbasketball.com/blog/five-ways-to-improve-film-sessions-with-your-players/">PGC</a>, <a href="https://www.hudl.com/blog/how-to-use-video-in-one-on-one-settings-to-maximize-player-development">Hudl</a>, <a href="https://pgcbasketball.com/blog/how-to-break-down-game-film-basketball-post-game-report-process/">PGC post-game</a>; one source per number, youth and high school</td>
+</tr>
+</tbody>
+</table>
+<p>Design consequence: three items per game, each one clip, one cue, one drill; a menu he picks from; explicit silence on what stayed in band. Extending the acrobat result to a self-coached adult is our extrapolation.</p>
+<h3 id="33-immediate-or-delayed">3.3 Immediate or delayed</h3>
+<p>Mechanics and decisions need different loops. Noah's founder calls fine-motor feedback later than about half a second "essentially worthless" (<a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah, Sheppard profile</a>; vendor claim), and the relayed modelling parameter is feedback within 45 s of the rep (<a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a>). A next-day report cannot retrain a release; it sets the practice agenda and works on shot selection and hold time. For decisions, delay plus questions is the better-evidenced route: swimmers whose coach withheld feedback and asked questions improved technique and race times more than controls (<a href="https://keithlyons.me/bandwith-approach-to-supporting-learning">Chambers &amp; Vickers 2006, summary</a>; abstract-level), and 11 U13 players who reviewed their clips with questioning made more successful decisions (p = .006) and executions (p = .011) at post-test, gone by retention; the controls also watched video, so questioning was the active ingredient (<a href="https://doi.org/10.7717/peerj.7392">Gil-Arias 2019</a>). Praise is not the lever: 6.9% of Wooden's 2,326 coded acts were praise and about 75% carried information (<a href="https://www.creativitypost.com/article/praise_vs._criticism_which_is_more_effective">Tharp &amp; Gallimore summary</a>). Write strengths as "keep doing this", with a clip.</p>
+<h3 id="34-self-modelling-and-feedforward-reels">3.4 Self-modelling and feedforward reels</h3>
+<table>
+<thead>
+<tr>
+<th>Study</th>
+<th>Result</th>
+<th>Caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1809566/full">Wang 2026 meta-analysis</a>, 10 studies, n = 244</td>
+<td>Performance SMD 0.81 (0.28-1.33), self-efficacy 0.62; one-week follow-up 0.59, ns; effect grows with minutes and sessions</td>
+<td>Fades within a week; no protocol given</td>
+</tr>
+<tr>
+<td><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2011.00155/full">Ste-Marie 2011</a>, 27 children</td>
+<td>Best reps edited into a routine one level up, re-cut on improvement, watched 3x at session start and 3x between blocks; beat verbal-only (p = .01)</td>
+<td>Trampoline</td>
+</tr>
+<tr>
+<td><a href="https://mbj.ssrc.ac.ir/article_4893.html?lang=en">Heidari 2025</a>, 72 boys</td>
+<td>Feedforward edit beat unedited own video on free throws and self-efficacy (post hoc p = .001)</td>
+<td>Main effects only; inconsistent statistics</td>
+</tr>
+<tr>
+<td><a href="https://thescopes.org/assets/Uploads/36170e3d44/Middlemas.pdf">Middlemas 2017</a>, 10 academy footballers</td>
+<td>Raw video: 15.6% negative vs 6% positive self-statements; best-clips edit: 13.5% positive vs 7.9% negative, positive feelings 2.5% to 15.9%; "what I need to do" 17.4% vs 24.2%</td>
+<td>Exploratory; follow-up: gains in 2 of 4 players</td>
+</tr>
+<tr>
+<td><a href="https://ejournals.lib.hkbu.edu.hk/index.php/ajper/article/view/1777">Luk 2009</a>, 24 girls</td>
+<td>Cues with expert or self video improved form vs control, but no better than cues alone</td>
+<td>6 per group</td>
+</tr>
+</tbody>
+</table>
+<p>Two artefacts, not one. The debrief uses raw clips, each with a cue and a question. The feedforward reel holds only clean reps, no misses, no score pop-ups, re-cut after every game and watched three times before the next. The current 27-clip reel with "+2 PTS" pop-ups is neither: outcome labels are not cues, and cue-less self-video is the configuration flagged as possibly ineffective (<a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Mödinger full text</a>).</p>
+<h3 id="35-transfer-to-game-shots">3.5 Transfer to game shots</h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Numbers</th>
+<th>Source, caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vary body state every rep (differential learning)</td>
+<td>Transfer to 7 m: 1.27-1.38 vs random-distance 1.00, progressive 0.86, blocked 0.54, control 0.59; blocked best in practice (1.79), least enjoyed</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">Shamshiri 2025</a>, 84 adolescent female novices; transfer to a new distance, not to contested shots</td>
+</tr>
+<tr>
+<td>Blocked can transfer too; "random beats blocked" is contested</td>
+<td>Blocked d = 1.39, "move only after a make" d = 1.02, random ns (36 adults). Only 20% of 183 outcomes fit random &gt; blocked; applied-setting transfer SMD 0.34, ns</td>
+<td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31079552&amp;resultType=core&amp;format=json">Porter 2020</a>; <a href="https://openscience.ub.uni-mainz.de/items/121b50fc-3b0c-48f3-9ada-08d340068f88/full">Ammar 2024</a></td>
+</tr>
+<tr>
+<td>Differential beat blocked under induced anxiety; foul-line volume builds a set-shot advantage that is absent for jump shots</td>
+<td>—</td>
+<td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22contextual%20interference%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json">Taghizadeh 2026; Keetch 2005</a></td>
+</tr>
+<tr>
+<td>Practice under simulated pressure</td>
+<td>g = 0.67 (0.43-1.12), 14 studies, n = 394</td>
+<td><a href="https://shura.shu.ac.uk/25578/">Low et al.</a>: "pressurized training environments rather than relying on greater amounts of training"</td>
+</tr>
+<tr>
+<td>Quiet-eye routine: fixate one rim spot ~1.5 s, then shoot</td>
+<td>Team free throws 54% to 76.6% over two seasons; year one +12% in practice only. QE-trained students stayed accurate under defensive pressure; long QE helped only when defended</td>
+<td><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers 2001</a>; <a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22quiet%20eye%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json&amp;pageSize=10">Vickers 2017, Klostermann 2018</a>; training evidence is free throws</td>
+</tr>
+<tr>
+<td>Refining an automated technique</td>
+<td>Up to 12 months; performance drops first; the old pattern returns under pressure unless re-automated in representative practice</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a>; golf and athletics cases</td>
+</tr>
+</tbody>
+</table>
+<p>Consequences: form-shooting blocks are fine for the practised spot, but every transfer drill varies the body state and carries a consequence (streak reset, forfeit, logged score); the game-day cue is the rim, not the arm; and the tracker expects a practice gain before a game gain, so one flat month is not evidence that the change failed.</p>
+<h2 id="4-drill-library-mapped-to-weakness-types">4. Drill library mapped to weakness types</h2>
+<p>Each weakness gets two or three drills with a dose, one cue and a test the tracker can score. Cues point at the ball, rim or floor where the source gives one: across about 80 experiments, cues aimed at the movement effect beat body-part cues for novices and experienced players alike, with a modest effect (learning g about 0.58) (<a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Chua et al. 2021</a>). Mechanics are coached in practice; in games the attention goes to the target (<a href="https://www.swish22.com/swish-article-basketball-shooting-instruction-nobody-gave-you">Nordland</a>). Rebuilding an automated shot is a staged project of up to 12 months: performance drops first, and the old pattern returns under pressure unless the new one is practised in game-like conditions (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a>). No adult-recreational norms exist for any test below; the high-school numbers are ceilings and the first score is the baseline (<a href="https://coachingtoolbox.net/basketball-drills/decathlon-shooting-challenge.html">Decathlon</a>, <a href="https://teachhoops.com/basketball-3-minutes-shooting-drill/">Teach Hoops</a>). Rows 7-9 target the July 2026 findings (two-hand push, elbow flare, centred ball, dip-pause-push).</p>
+<table>
+<thead>
+<tr>
+<th>Weakness</th>
+<th>Drill and dose</th>
+<th>Cue</th>
+<th>Progress test</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Shot selection</td>
+<td>Two-second catch-and-shoot: 5 spots x 20 attempts off a self-toss, ball gone within 2 s of the catch (phone timer). Game rule: open on the catch = shoot, otherwise move it. NBA eFG% was .54 under 2 s of touch vs about .44 above it (descriptive; the sample includes transition shots)</td>
+<td>Open on the catch, shoot now</td>
+<td>Catch-and-shoot share of attempts per game</td>
+<td><a href="https://coachingtoolbox.net/?p=10426">Shea via Coaching Toolbox</a></td>
+</tr>
+<tr>
+<td>2. Shot selection</td>
+<td>Max-two-dribble ladder: top and both wings, 0-, 1- and 2-dribble pull-ups only, 10 makes per variation; never rehearse a 3+ dribble jumper. Game cap: two dribbles with no gap = drive or pass. NBA FG% 45% at 0 dribbles, 37% at 3, .398 at 6+</td>
+<td>Two dribbles, then decide</td>
+<td>Share of jumpers after 3+ dribbles</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4395350/">Csapo &amp; Raab</a>, <a href="https://www.82games.com/dribbles.htm">82games</a></td>
+</tr>
+<tr>
+<td>3. Shot selection</td>
+<td>Grade every shot 0-9 from the reel: 9 open layup, 7 open jumper in range, 5 practice-made shot, 3 bad shot (hand in face, fade, off-balance). For one 5-game block, no jumper before a paint touch (D1: 1.06 PPP with a paint touch, 0.71 without)</td>
+<td>No shot below a 5</td>
+<td>Rising game average independent of makes; paint-touch share (D1 teams 40%)</td>
+<td><a href="https://betterbasketball.com/?p=3513">Devenzio via Better Basketball</a>, <a href="https://shottracker.com/ball-reversals-or-paint-touches-use-analytics-to-learn-what-drives-efficiency-for-your-team/">ShotTracker</a></td>
+</tr>
+<tr>
+<td>4. Pull-up balance</td>
+<td>Angled two-dribble pull-up: two dribbles at 45 degrees from the top, plant the inside foot, pound the last dribble, jump straight up; 10 per side x 3 sets, 30 s rest</td>
+<td>Straight up, straight down, hold the follow-through</td>
+<td>5/10 per wing on one-dribble pull-ups; landing inside the take-off spot on film</td>
+<td><a href="https://www.active.com/basketball/articles/off-the-dribble-7">Active.com</a>, <a href="https://www.coachup.com/nation/?p=1668">CoachUp</a>, <a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+<tr>
+<td>5. Pull-up balance</td>
+<td>27 Game: 3 spots x (catch-and-shoot, one-dribble pull-up right, one-dribble left) x 3, charted by type; commit to the footwork (1-2 or hop) that lands most balanced on film, keep both. Add pull-backs: hard between-the-legs dribble to freeze the defender, pull back as you pick the ball up, 8 per side</td>
+<td>Plant on the inside foot</td>
+<td>Hop and 1-2 make rates within 10 points; 4/8 pull-backs per side</td>
+<td><a href="https://blog.drdishbasketball.com/4-dr.-dish-shooting-drills-for-one-player-workouts">Dr Dish drills</a>, <a href="https://blog.drdishbasketball.com/basketball-shooting-footwork-1-2-vs.-the-hop">Dr Dish footwork</a>, <a href="https://blog.drdishbasketball.com/skill-builder-lebron-james-pull-back-shooting">Dr Dish pull-back</a></td>
+</tr>
+<tr>
+<td>6. Catch-and-shoot, relocation</td>
+<td>Relocate after your pass: ball driven toward you = space away; driven away = fill behind the ball; baseline drive = go to top/wing; middle drive = go to the corner. Then the Relocate Challenge: sprint wing to wing, 50 shots</td>
+<td>Ball in the air, feet in the air</td>
+<td>35 of 50</td>
+<td><a href="https://playbank.fastmodelsports.com/library/basketball/fastdraw/243688/play-Steph-Curry-Relocate-Shooting-Drill">FastModel Curry drill</a>, <a href="https://playbank.fastmodelsports.com/library/basketball/fastdraw/189879/play-Dr-Dish-Relocate-Challenge">Dr Dish Relocate Challenge</a></td>
+</tr>
+<tr>
+<td>7. Guide hand (two-hand push)</td>
+<td>Guide-hand trio at 3-6 ft, 2-3 min each, every session: mirror-hand (guide hand held 1 in off the ball), flat-hand (rigid straight fingers, palm only), thumb-pinch (coin pinched between shooting thumb and index finger; it drops if the thumb pushes)</td>
+<td>Guide thumb points back at your head after release; backspin, not side spin</td>
+<td>20 one-hand form makes in under 3 min</td>
+<td><a href="https://www.breakthroughbasketball.com/training/fixing-thumb-flick">Breakthrough</a>, <a href="https://www.breakthroughbasketball.com/fundamentals/shooting/fix-guide-hand">guide-hand fix</a>, <a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+<tr>
+<td>8. Elbow flare, centred ball</td>
+<td>Lift test plus 5 min of daily form shooting: at the set point lift the guide hand 1 in; if the ball stays centred on the shooting hand, hand and elbow placement are fine (one coaching school's view; mainstream guides still cue "elbow in"). Shoot from a few feet with the ball on the shooting-eye side, release on the way up. Run the dominant-eye test once: a cross-dominant shooter may be right to bring the ball up the middle</td>
+<td>Ball centred on the hand; the elbow follows</td>
+<td>25 shots scored swish 2 / make 1 (max 50), personal best</td>
+<td><a href="https://www.breakthroughbasketball.com/training/beef-shooting-formula">Breakthrough</a>, <a href="https://www.coachesclipboard.net/Shooting.html">Coach's Clipboard</a>, <a href="https://www.active.com/basketball/articles/where-is-the-proper-shot-line-a">Active.com shot line</a>, <a href="https://www.coachesclipboard.net/FreeThrowShooting.html">Clipboard FT page</a></td>
+</tr>
+<tr>
+<td>9. Two-motion rhythm</td>
+<td>Dipped one-motion catch-and-shoot: self-toss, keep the dip, no stop at the set point, 20 shots per spot at about 3, 5 and 6 m, move back at 70%+. Penner's 36 elite shooters scored higher shot quality with a dip at all four distances, but pauses were not tested, so "remove the stop" is a coaching inference, and the dip costs some shot speed. Alternate old-pattern and new-pattern reps on film until the old one feels strange</td>
+<td>One continuous action; the ball does not stop</td>
+<td>Make % per distance; spread of release timing across a game's attempts</td>
+<td><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a>, <a href="https://www.swish22.com/swish-article-basketball-shooting-instruction-nobody-gave-you">Nordland</a>, <a href="https://proskillsbasketball.com/?p=45459">Pro Skills</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins</a></td>
+</tr>
+<tr>
+<td>10. Off-hand finishing</td>
+<td>Mikan: 20 makes alternating sides, ball at shoulder height, then the 8 combinations (inside/outside foot x inside/outside hand, facing baseline and half-court)</td>
+<td>Ball stays at the shoulder</td>
+<td>Decathlon weak-hand layup station: makes in 1 min</td>
+<td><a href="https://www.basketballforcoaches.com/mikan-drill/">Basketball for Coaches</a>, <a href="https://coachingtoolbox.net/basketball-drills/decathlon-shooting-challenge.html">Decathlon</a></td>
+</tr>
+<tr>
+<td>11. Finishing with contact</td>
+<td>Partner with a pad: one long step to absorb the bump, rip the ball below the knees, finish on two feet; 3-4 reps each of stretch, power and sweep-through, then live with a passive defender choosing by position. Read: shoulder-to-shoulder = one-foot stride finish; see the help defender's chest = two feet and look to kick. Two-foot default in traffic: single-leg stop-jumps loaded the knee more than double-leg in 10 university volleyball players (no age-specific study)</td>
+<td>Bump-bump-finish</td>
+<td>Finish used vs recommended per clip; share of two-foot landings</td>
+<td><a href="https://coachingtoolbox.net/basketball-drills/finishing-thru-contact.html">Coaching Toolbox</a>, <a href="https://coachesinsider.com/blog/2024/08/28/finishing-reading-the-defender-with-tj-rosene-emmanuel-college">TJ Rosene</a>, <a href="https://halfcourthoops.substack.com/p/core-skills">Half Court Hoops</a>, <a href="https://jssm.org/jssm-10-151.xml-Fulltext">JSSM 2011</a></td>
+</tr>
+<tr>
+<td>12. Triple threat, first step</td>
+<td>Guided closeouts in three stances, then reactive, then live 1v1: top foot inside your frame = jab outside it and go if it drops; top foot outside = attack the bottom foot; squared = jab your dominant foot outside theirs; defender pops back on the jab = shoot. Hold the jab a count of one; drive off his shoulder. The 4-5 s clock reported for the live stage is unverified</td>
+<td>Foot past his hip, he is beaten</td>
+<td>Seconds from catch (or start of size-up) to first action</td>
+<td><a href="https://www.breakthroughbasketball.com/training/scoring-footwork">Breakthrough</a>, <a href="https://www.coachesclipboard.net/OutsideMoves.html">Coaches Clipboard</a>, <a href="https://nbpa.com/grassroots/blog/jab-step-series-with-aaron-gordon">NBPA jab series</a></td>
+</tr>
+<tr>
+<td>13. Triple threat, first step</td>
+<td>Read-before-the-catch 1v1: partner tosses, sprint to the catch, the defender gives a read as the ball arrives, act within 1 s (sagged = shoot, closed hard = drive, shaded = pass fake and go); 3 reps in a row on offence. Benchmark: Popovich's "point-five" rule, a coaching heuristic, not a measured standard</td>
+<td>Read, catch, move</td>
+<td>Share of catches with an action inside 1 s</td>
+<td><a href="https://3points.substack.com/p/representative-learning-design">3 Points</a>, <a href="https://www2.kusports.com/weblogs/tale-tait/2021/nov/05/pass-drive-or-shoot-kus-bill-self-emphas/">KU Sports</a>, <a href="https://cna.fip.it/wp-content/uploads/2023/03/mario-de-sisti-1-on-1-perimeter.pdf">De Sisti</a></td>
+</tr>
+<tr>
+<td>14. Contested catch</td>
+<td>Step-back-for-space: catch 1-2 ft deeper than usual and shoot at once; a foot of distance costs little, a defender inside 6 ft costs a lot (NBA 3P% about 32% within 6 ft vs about 40% at 6+ ft; league catch-and-shoot 3s 37.4% vs pull-up 3s 32.9%)</td>
+<td>Catch a step deeper</td>
+<td>Open-shot share per game (defender band at release)</td>
+<td><a href="https://brianmccormick.substack.com/p/increasing-offensive-spacing">McCormick</a>, <a href="https://la.disneyresearch.com/wp-content/uploads/How-to-Get-an-Open-Shot-Analyzing-Team-Movement-in-Basketball-using-Tracking-Data-Paper.pdf">Lucey et al.</a>, <a href="https://www.nba.com/news/best-shooters-of-the-2024-25-season">NBA.com</a></td>
+</tr>
+<tr>
+<td>15. Passing out of the drive</td>
+<td>Drive-and-kick: the help defender hedging to stop penetration is the cue to pass; on a baseline drive the opposite player drifts to the corner; a few times per week. No primary source on lob vs drop-off reads was found</td>
+<td>Help steps up, ball goes out</td>
+<td>Assists plus kick-outs per game</td>
+<td><a href="https://www.coachesclipboard.net/DriveandKickDrill.html">Coaches Clipboard</a></td>
+</tr>
+<tr>
+<td>16. Passing out of the drive</td>
+<td>Pull-back vs help: dribble back by the back foot, slide back and read shot / split / attack one defender / pass; never shoot 2-on-1 once help has arrived. In the lane, seeing the help defender's chest means land on two feet and spray</td>
+<td>Back foot, slide, watch</td>
+<td>Turnovers per drive (the pipeline does not count turnovers yet)</td>
+<td><a href="https://cna.fip.it/wp-content/uploads/2023/03/mario-de-sisti-1-on-1-perimeter.pdf">De Sisti</a>, <a href="https://halfcourthoops.substack.com/p/core-skills">Half Court Hoops</a></td>
+</tr>
+<tr>
+<td>17. Rebounding</td>
+<td>Elbow habit: on every teammate shot go to the nearest elbow; 70% of wing and corner misses go long to the opposite side and 3-point misses carry over the bigs; crash only a true 50/50 ball, otherwise sprint back</td>
+<td>Shoulder to shoulder, never baseline side</td>
+<td>Position at rim contact from tracking (elbow-zone share)</td>
+<td><a href="https://www.coachesclipboard.net/offensive-rebounding-and-transtion-defense.html">Coaches Clipboard</a>, <a href="https://pgcbasketball.com/blog/guards-get-elbow-offensive-boards">PGC</a></td>
+</tr>
+<tr>
+<td>18. Rebounding</td>
+<td>Over-the-back game: two lines at the elbows, throw off the glass, body the player behind; 1 point defensive, 2 offensive, first to 10. Be active through flight time (release to the top of the bounce)</td>
+<td>Win the flight time</td>
+<td>Rebounds and loose-ball recoveries per game</td>
+<td><a href="https://coachesinsider.com/mens-basketball/3-secrets-for-increasing-your-offensive-rebound-total-article">Coaches Insider</a>, <a href="https://www.hooptactics.net/premium/coach/pdf/drills/drillboxdefender.pdf">HoopTactics</a></td>
+</tr>
+<tr>
+<td>19. Conditioning, adult legs</td>
+<td>Two short strength sessions a week (squat, trap-bar deadlift, split squat, single-leg RDL, hip thrust, Pallof press) plus a FIFA 11+-style 10-minute dynamic warm-up with calf work before games. As cited by StrengthLog, a 2014 BJSM meta-analysis found strength training cut injuries to under a third (RR 0.315) while stretching had no effect (RR 0.963); the abstract itself could not be opened. FIFA 11+ reduced the overall injury rate in one Italian basketball club. Basketball is the leading cause of Achilles ruptures and the 40-59 band rose fastest. No over-35 basketball program was found; this is inference</td>
+<td>Strength work, not static stretching</td>
+<td>Sessions and warm-ups logged per week</td>
+<td><a href="https://www.strengthlog.com/strength-training-for-basketball/">StrengthLog</a>, <a href="https://myorthoevidence.com/AceReport/Show/fifa-11-injury-prevention-program-is-effective-for-elite-basketball-players">FIFA 11+</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/6259075">Lemme 2018</a></td>
+</tr>
+<tr>
+<td>20. Conditioning, adult legs</td>
+<td>Tired free throws: 10 at the end of every session. After a 12-minute simulated game, guards' 3-point entry angle fell from 45.2 to 43.4 degrees, release time slowed from 0.6 to 0.7 s and makes fell from 7.8 to 6.6 of 15</td>
+<td>Same arc when tired</td>
+<td>Tired FT within 10 points of a fresh set; game-1 vs game-3 split in the reel</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10974731">Bourdas 2024</a>, <a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practice design.</strong> Blocked form shooting from one spot is fine for acquisition. In a novice jump-shot study, groups that changed body position every rep at one distance transferred best to a new distance, while blocked practice transferred no better than no practice; random practice beat blocked only on retention (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">PMC12481044</a>). Skilled players hold a spot-specific "especial skill" for foul-line set shots that is absent for jump shots, so the pull-up is trained across spots, dribble counts and footwork rather than as 100 identical reps (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22contextual%20interference%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json">Keetch et al. via Europe PMC</a>). Extending this to fatigued or contested reps is an inference, not a tested result.</p>
+<h3 id="25-minute-solo-session-outdoor-court-no-rebounder-self-toss-and-chase">25-minute solo session (outdoor court, no rebounder, self-toss and chase)</h3>
+<table>
+<thead>
+<tr>
+<th>Minutes</th>
+<th>Block</th>
+<th>Dose</th>
+<th>Make target</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3</td>
+<td>One-hand form shooting, 3-6 ft</td>
+<td>until 20 makes</td>
+<td>20 in under 3 min</td>
+<td><a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+<tr>
+<td>3-8</td>
+<td>Guide-hand trio (mirror, flat, thumb-pinch)</td>
+<td>about 90 s each</td>
+<td>10 swishes each, 30 total</td>
+<td><a href="https://www.breakthroughbasketball.com/training/fixing-thumb-flick">Breakthrough</a></td>
+</tr>
+<tr>
+<td>8-13</td>
+<td>Dipped one-motion catch-and-shoot off self-toss, 5 mid-range spots, relocate after each make</td>
+<td>5 makes per spot</td>
+<td>25; a spot moves back at 70%+</td>
+<td><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a>, <a href="https://proskillsbasketball.com/?p=45459">Pro Skills</a></td>
+</tr>
+<tr>
+<td>13-18</td>
+<td>Angled two-dribble pull-ups 10 per side, then pull-backs 8 per side</td>
+<td>36 attempts</td>
+<td>10 of 20 and 8 of 16</td>
+<td><a href="https://www.active.com/basketball/articles/off-the-dribble-7">Active.com</a>, <a href="https://blog.drdishbasketball.com/skill-builder-lebron-james-pull-back-shooting">Dr Dish pull-back</a>, <a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+<tr>
+<td>18-22</td>
+<td>Make-to-move lap: 7 game spots, move only after a make, different start state each rep (half-squat start, altered hand tension, changed foot or torso position)</td>
+<td>one lap</td>
+<td>7; log shots needed per lap, first lap is the baseline</td>
+<td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31079552&amp;resultType=core&amp;format=json">Porter 2020</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">PMC12481044</a></td>
+</tr>
+<tr>
+<td>22-25</td>
+<td>Tired free throws with the quiet-eye routine (eyes on one rim spot for about 1.5 s, then one quick motion; evidence is free throws only, with the game gain arriving a season after the practice gain)</td>
+<td>10</td>
+<td>7 of 10, within 10 points of a fresh set</td>
+<td><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers</a>, <a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+</tbody>
+</table>
+<p>About 105 makes per session, logged by block in a shot journal (<a href="https://www.davehopla.com/is-your-season-over/">Hopla</a>). Every fourth week, replace minutes 8-18 with the 40-in-3 test (32/40 is a high-school blog benchmark; no adult norm exists) and 1-minute threes (high-school target 8), charted against your own first score (<a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a>, <a href="https://coachingtoolbox.net/basketball-drills/decathlon-shooting-challenge.html">Decathlon</a>).</p>
+<h2 id="5-output-formats-compared">5. Output formats, compared</h2>
+<p>The pipeline already produces the expensive inputs: clips per possession, rim make/miss, shooter attribution. Its current output, a 27-clip reel with "+2 PTS / ASSIST" pop-ups, is the format the evidence flags: outcome labels are not cues, and the PE review behind "video beats verbal alone" cites an adult study where video without a cue produced no improvement (not replicated by Kok et al. 2020) (<a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Mödinger 2021</a>). Every build-first item below comes from clips that already exist.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>What it is</th>
+<th>To produce</th>
+<th>What the evidence says</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Captioned corrective edit (MP4 + HTML clip list)</td>
+<td>3 points x 3-5 numbered clips of 10-20 s, one external cue under 20 words each, every correction followed by his own correct rep</td>
+<td>Low. ffmpeg drawtext, setpts, loop freeze</td>
+<td>Video + ~20-word cue beats verbal alone, one parameter per clip (<a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a>); 10-20 s, one cue, two replays max (opinion piece) (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1775088/full">Tannoubi 2026</a>); three points, 3-5 clips per topic (<a href="https://pgcbasketball.com/blog/how-to-break-down-game-film-basketball-post-game-report-process/">PGC</a>); external wording 5.95 vs 5.05 on transfer form (<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2010.00190/full">Wulf 2010</a>)</td>
+<td>Build first; replaces the 27-clip reel</td>
+</tr>
+<tr>
+<td>Best-reps reel (feedforward / positive self-review)</td>
+<td>60-90 s of his 6-8 cleanest possessions, no captions or numbers; re-cut each game, watched three times before the next</td>
+<td>Low. ffmpeg concat; the Top 10 is most of it</td>
+<td>Raw footage: 15.6% negative vs 6% positive self-talk; a best-plays edit reversed it (n=10; raw for the debrief, edit pre-game) (<a href="https://thescopes.org/assets/Uploads/36170e3d44/Middlemas.pdf">Middlemas 2017</a>). Self-modeling SMD 0.81, dose-dependent, not significant at one week (<a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1809566/full">Wang 2026</a>); three viewings per session (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2011.00155/full">Ste-Marie 2011</a>)</td>
+<td>Build first; separate from the corrective edit</td>
+</tr>
+<tr>
+<td>HTML game report</td>
+<td>Three cards (clip pair + cue + drill), possession log in NBA bins, expected vs actual points by situation, 8-frame shooter crops at native resolution</td>
+<td>Medium. Template once; columns derive from the tracker</td>
+<td>Expected points come from the situation, not the shooter; shot making = actual minus expected (<a href="https://sportradar.com/content-hub/blog/explaining-synergy-shot-quality/?lang=en-us">Sportradar SSQ</a>). Touch time under 2 s: .54 eFG vs ~.44 after, a correlate (<a href="http://web.archive.org/web/20150114072540/http://www.basketballanalyticsbook.com/2014/12/18/individual-touch-time-before-the-shot-cleveland-is-improving-atlanta-is-thriving-and-charlotte-is-struggling/">Shea 2014</a>). Feedback on out-of-band key items only beat feedback on everything (30 child acrobats) (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3796837/">Sadowski 2013</a>)</td>
+<td>Build first; three cards, never more</td>
+</tr>
+<tr>
+<td>Guess-before-reveal clip player</td>
+<td>Verdict hidden until he enters the miss class and a 1-9 grade, or shoot / drive / pass at a freeze frame; agreement logged as calibration</td>
+<td>Low. A few lines of JS plus a JSON log</td>
+<td>Estimating your error before the result gave the best retention, the result alone the worst (GF) (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Guadagnoli%22%20AND%20TITLE:%22error%20estimation%22&amp;resultType=core&amp;format=json">Guadagnoli &amp; Kohl 2001</a>). Self-controlled feedback: retention SMD 0.63, transfer 0.68 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12467369/">meta-analysis</a>); self-requested video improved set-shot form on transfer, p=.04 (<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00338/full">Aiken 2012</a>)</td>
+<td>Build first</td>
+</tr>
+<tr>
+<td>Progress tracker</td>
+<td>Two pre-game process goals (e.g. jumpers released within 2 s of the catch), 6-game sparklines, FG% only as a Wilson interval</td>
+<td>Low. Per-game JSON, inline SVG</td>
+<td>Process goals d=1.36 vs outcome 0.09, but self-set 0.21, adults 0.21, gains only with progress feedback (<a href="https://researchportal.scu.edu.au/esploro/outputs/journalArticle/The-performance-and-psychological-effects-of/991013048913602368">Williamson 2022</a>). 5/13 spans 18-64%; 3P% needs ~750 attempts (<a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a>). Measurement cut enjoyment and continued engagement in six experiments (GF) (<a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a>)</td>
+<td>Build first, minimal</td>
+</tr>
+<tr>
+<td>Cue card</td>
+<td>One lock-screen image: one analogy plus one external pre-shot cue; regenerated only when the focus changes</td>
+<td>Low. Pillow</td>
+<td>One analogy held under pressure where eight explicit rules collapsed (<a href="https://scholars.hkbu.edu.hk/en/publications/analogy-learning-and-the-performance-of-motor-skills-under-pressu/">Lam et al. 2009</a>). Instructional self-talk ES .48, trained cue words beat untrained (<a href="https://www.psychologicalscience.org/index.php/news/releases/thoughts-that-win.html">Hatzigeorgiadis 2011</a>). Rim-fixation routine: 54% to 76.6% game FT, free throws only (<a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers</a>)</td>
+<td>Build first</td>
+</tr>
+<tr>
+<td>Side-by-side / overlay with his best rep or a model</td>
+<td>Game pull-up beside his best catch-and-shoot rep or the July close-up, aligned at release, 25% speed, 3-5 loops, one caption</td>
+<td>Medium. ffmpeg hstack + setpts; Kinovea prototypes it free (<a href="https://www.kinovea.org/features.html">Kinovea</a>)</td>
+<td>Expert + self model + verbal beat expert + verbal in one volleyball study (n=63); the same group's 2007 study found them nearly equal (<a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a>). NBA players ask for "a clip of another player doing something really well" (<a href="https://www.hudl.com/blog/which-parts-of-analysis-do-nba-players-value-the-most-atlanta-hawks-coach-nate-babcock-talks-video">Babcock, Hudl</a>)</td>
+<td>Later; needs a matched pair; wide angle compares hold, balance, landing only</td>
+</tr>
+<tr>
+<td>Shot chart / hex map</td>
+<td>Court map with click-to-clip zones from ankle keypoints at take-off through a manual homography; shaded across games only</td>
+<td>Medium. One-time lens + 4-point calibration; 1-3 attempts per zone per game</td>
+<td>Clicking a zone opens its clips (<a href="https://hudl.com/blog/introducing-interactive-shot-charts">Hudl</a>); no opened source shows a chart alone changing shot selection. The 11 cm location error needed a 7.6 m high camera and holds only on the floor (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">padel study</a>); automatic court registration errs 127-140 cm (<a href="https://ar5iv.labs.arxiv.org/html/2209.07795">KaliCalib</a>)</td>
+<td>Later; cumulative over 4-6 games</td>
+</tr>
+<tr>
+<td>Tendency / self-scout sheet</td>
+<td>One page of tendencies as percentages (share after 3+ dribbles or a 6+ s hold, drive direction, shot mix) plus a SWOT he writes first</td>
+<td>Medium. Derived from the possession log after 3-4 games</td>
+<td>Patterns are promoted only with clip volume; the player writes his SWOT first (<a href="https://lowmanhelp.substack.com/p/the-core-of-every-player-development">Lowman</a>). Scouts lead with tendencies, one page for the player (<a href="https://fastbreak.playbooktech.com/coaches-community/?p=2193">Fastbreak</a>). Synergy ranks need 10+ possessions per play type, so 2-3 game windows (<a href="https://fansided.com/2017/09/08/nylon-calculus-understanding-synergy-play-type-data/">Nylon Calculus</a>)</td>
+<td>Later, from game 4</td>
+</tr>
+<tr>
+<td>Pose-skeleton overlay on game clips</td>
+<td>YOLO11-pose skeleton with joint angles on the reel</td>
+<td>Medium. imgsz 1280-1920 or shooter crops; CPU cost not yet estimated</td>
+<td>On 30 fps sideline film no joint angle qualifies as a measurement (elbow RMSE 16-21 deg even close up, wrist 63-85 deg) (<a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo thesis</a>); imgsz=640 shrinks a 130 px player to ~43 px, below the 64x48 collapse point (<a href="https://ar5iv.labs.arxiv.org/html/2109.09090">low-resolution HPE</a>). Release height, not jump height, tracked makes in 18 senior players (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641682/">Amaro 2025</a>)</td>
+<td>Skip as an output; lines, no degrees, on 2-3 crop frames</td>
+</tr>
+<tr>
+<td>Arc / release-smoothness card</td>
+<td>Top-of-key shots only: fitted parabola, entry angle against a 40-47 deg band, short vs long miss class, end-weighted ball-path curvature as a smoothness trend</td>
+<td>Medium. Parabola fit on the ball track plus a plane test; ~17 px ball at night</td>
+<td>Single-camera arc is valid only within a few degrees of the backboard normal; corners are unrecoverable (<a href="https://patents.google.com/patent/US9283432B2/en">Noah patent</a>). Physics puts the optimum near 40 deg entry vs Noah's 45, so score a band by depth consistency (GF) (<a href="https://www.sponet.de/sponet/Record/4014972?lng=en">Tran &amp; Silverberg 2008</a>). End-of-path curvature explained a third of NBA FT% variance, 35 players (GF) (<a href="https://arxiv.org/html/2506.13779v1">Zhu 2025</a>)</td>
+<td>Later, trend only; mechanics go to the 240 fps side phone</td>
+</tr>
+<tr>
+<td>Voice-over review</td>
+<td>Recorded or synthesised narration over the clips</td>
+<td>Low-medium. TTS + ffmpeg amix</td>
+<td>The cue evidence is for ~20-word verbal or text cues with picture above text (<a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a>); voice-over is an app feature (<a href="https://www.kinovea.org/features.html">OnForm, Dartfish</a>); nothing opened tests narration against a caption</td>
+<td>Skip; the caption carries the cue</td>
+</tr>
+</tbody>
+</table>
+<p>Three rules cover every format. Badge every number measured / judged / needs close-up, like the Roboflow tracker's clean / rattled / occluded flag (<a href="https://roboflow.com/blog/how-to-build-an-ai-basketball-shot-evaluator">Roboflow</a>). One render flag, two builds: shared (recap, Top 10, makes only, no grades, opted-out players blurred) and private (grades, cues, defender tags); the defender's privacy law bites on humiliating publication (s.2(4)), not on filming, and the Oct 2025 ruling's remedy was blur plus no onward sharing (GF) (<a href="https://www.wipo.int/wipolex/en/text/347462">WIPO text</a>). No numbers on game night or on the best-reps reel; the tracker shows two goals behind a training-mode toggle (GF) (<a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a>). One per-game JSON (headline, three truths, 5-7 clip picks with cues, two drills) feeds every render, the pattern of Google's Warriors-advised coach, which pairs raw video with extracted landmarks and outcome but publishes no accuracy figures (<a href="https://cloud.google.com/transform/how-we-built-an-ai-basketball-coach-with-gemini">Google Cloud</a>).</p>
+<p>Week one: corrective edit, best-reps reel, guess-before-reveal player, cue card and two-goal tracker, wrapped in the HTML report. Shot chart, tendency sheet, comparison clip and arc card wait for calibration and 3-6 games. Skeleton overlays and voice-over do not earn a slot.</p>
+<h2 id="6-what-a-single-wide-camera-can-and-cannot-measure">6. What a single wide camera can and cannot measure</h2>
+<p>One ground-level phone at mid-court, 1080p at 30 fps, players 100-160 px tall. The honest split is three buckets: what the pipeline can measure with a known error, what Claude should judge by eye from cropped frames, and the July form findings, which this footage will never recover.</p>
+<h3 id="61-subject-size-sets-the-ceiling">6.1 Subject size sets the ceiling</h3>
+<p>Pose accuracy degrades steadily as the person crop shrinks and collapses near 64x48 px: top-down HRNet-W32 scores 75.8 AP at 384x288, 61.5 at 128x96 and 29.7 at 64x48 on COCO (<a href="https://ar5iv.labs.arxiv.org/html/2109.09090">Wang et al.</a>). Barak's players at native resolution (~128x96 crops) sit in the moderate zone. The damage is self-inflicted: YOLO's default imgsz=640 scales the 1920-wide frame to one third, so a 130 px player becomes ~43 px, below the collapse point; YOLO-Pose itself falls from 64.9 AP at 1280 input to 57.5 at 640 and 44.9 at 384 (<a href="https://arxiv.org/pdf/2204.06806">YOLO-Pose</a>). Fixes: infer at imgsz 1280-1920, tile with SAHI, or crop the tracked shooter from the original frame and run a top-down model on the upscaled crop, the reason top-down beat bottom-up on far players in the padel study (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">Javadiha et al.</a>).</p>
+<p>Even then, keypoints are not measurements. With a close camera and the subject filling the frame, upper-arm angles reach ~7° RMSE against Vicon, elbow 16-21°, wrist 63-85°, the wrist errors largely from motion blur (<a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo thesis</a>). Camera position alone moved pose F1 from 0.96 to 0.59, and the side of the body away from the camera fails first: left elbow F1 0.69, left hip 0.66, index fingers 0.47-0.63 (<a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">Thai camera-position study</a>). On game footage, draw hips, knees, ankles, shoulders and elbows as a visual aid and print no joint angles.</p>
+<h3 id="62-the-three-buckets">6.2 The three buckets</h3>
+<table>
+<thead>
+<tr>
+<th>Bucket</th>
+<th>Item</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measure</td>
+<td>Attempts, make/miss</td>
+<td>A single-phone tracker found the ball in 98.1% of in-flight frames, but the net hid it for two frames (two makes logged as misses) and front-rim bounce-outs "look identical to rattle-in makes from one pov". Keep its "rattled"/"occluded" flags for a manual look; 30 fps gives "less confident verdicts", 60 fps recommended (<a href="https://roboflow.com/blog/how-to-build-an-ai-basketball-shot-evaluator">Roboflow</a>)</td>
+</tr>
+<tr>
+<td>Measure</td>
+<td>Hold time, dribbles, catch-to-shot</td>
+<td>Frame counts, ±1 frame = ±33 ms; release = ball leaves the wrist region while rising (same source)</td>
+</tr>
+<tr>
+<td>Measure</td>
+<td>Short vs long miss</td>
+<td>Front-rim vs back-rim contact; Noah reports ~70% of 3-pt misses short, no published method (<a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah</a>)</td>
+</tr>
+<tr>
+<td>Rough</td>
+<td>Shot location, spacing</td>
+<td>Homography at the ankles on the take-off frame, manual 4-point calibration (automatic registration erred 127-140 cm, <a href="https://ar5iv.labs.arxiv.org/html/2209.07795">KaliCalib</a>). The 11 cm benchmark used a camera 7.6 m up; at ground level the depth axis has few pixels per metre, so expect substantially worse (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">padel study</a>)</td>
+</tr>
+<tr>
+<td>In-plane only</td>
+<td>Entry angle</td>
+<td>Only shots flying across the camera, i.e. straight-on top-of-key, where Barak's pull-ups live. Uncorrected elbow shots read 48-49° for a true 45°; corner and baseline shots are edge-on and unrecoverable; the ~17 px ball gives no depth from its size (<a href="https://patents.google.com/patent/US9283432B2/en">Noah patent</a>)</td>
+</tr>
+<tr>
+<td>Average only</td>
+<td>Distance, speed</td>
+<td>Even validated multi-camera tracking: total distance 2.7% error, speed 0.41 m/s error, high-speed distance off 44-98%. Averages, never peak speed (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6056042/">Linke et al.</a>)</td>
+</tr>
+<tr>
+<td>Trend only</td>
+<td>Jump height</td>
+<td>±4 cm (±13%) from 30 fps timing (<a href="https://www.termedia.pl/doi/10.5114/biolsport.2023.118023">MyJump</a>)</td>
+</tr>
+<tr>
+<td>Check per clip</td>
+<td>Shooter attribution</td>
+<td>SportsMOT basketball: detection fine (DetA 79.1), association poor (AssA 46.8; HOTA 60.8 vs 72.5 volleyball). Distinct pickup shirts help re-ID; 100-160 px players at 30 fps are untested (<a href="https://arxiv.org/abs/2304.05170">SportsMOT</a>)</td>
+</tr>
+<tr>
+<td>Judge by eye</td>
+<td>Balance, landing drift, footwork, one- vs two-hand release, shot selection, defender-distance bin, spacing, decisions</td>
+<td>8-frame shooter crops at native resolution (catch, gather, set, release, apex, landing), gross keypoints only</td>
+</tr>
+<tr>
+<td>Needs close-up</td>
+<td>Elbow flare, guide hand, ball path, dip-pause rhythm, set-point elbow angle, release angle, release height, precise jump height</td>
+<td>Not readable at this scale or frame rate</td>
+</tr>
+</tbody>
+</table>
+<p>Every number in the report carries its bucket as a badge: MEASURED, JUDGED, NEEDS CLOSE-UP.</p>
+<h3 id="63-two-camera-changes">6.3 Two camera changes</h3>
+<p><strong>Raise the wide camera.</strong> Every production setup is elevated: Synergy at half-court "above the crowd", Hudl "at least halfway up the bleachers", Hudl Focus 20+ ft, the padel study 7.6 m (<a href="https://support.synergysports.com/support/solutions/articles/77000570456-camera-instructions-for-filming-games">Synergy filming instructions</a>); HomeCourt will not run shot analysis "if you are recording using ground mode" (<a href="https://www.homecourt.ai/faq/shotanalysis">HomeCourt FAQ</a>). A 3-4 m pole or railing mount at mid-court improves occlusion, ID switches and the homography in one move.</p>
+<p><strong>Add a form camera.</strong> Research setups and products converge on one spec:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Recommendation</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Angle</td>
+<td>Side-on, perpendicular to the shot plane, at most 15-45° off. The near side of the body reads reliably: shooting-hand side for elbow and release numbers, guide-hand side on guide-hand weeks</td>
+<td><a href="https://apopt.com/hoops/hoops.php">AI Hoops guide</a>; <a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">Thai study</a></td>
+</tr>
+<tr>
+<td>Height</td>
+<td>1.1-1.5 m, lens level (Noraxon: perpendicular at hip height, subject centred; the force-plate study used a 1.10 m tripod)</td>
+<td><a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">Noraxon via Thai study</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11677309/">MMPose vs force plates</a></td>
+</tr>
+<tr>
+<td>Distance</td>
+<td>2-4 m: 2 m for jump flight time, toward 4 m to keep body and ball in frame from gather through follow-through and early flight</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11677309/">MMPose</a>; <a href="https://apopt.com/hoops/hoops.php">AI Hoops</a></td>
+</tr>
+<tr>
+<td>Frame rate</td>
+<td>60 fps minimum; 240 fps for jump height and release timing (error 1.4% at 120 Hz vs 0.7% at 240; flight-time jump height ICC 0.985, bias -0.1 cm). Rear iPhone camera: 1080p at 120 or 240 fps</td>
+<td><a href="https://www.termedia.pl/doi/10.5114/biolsport.2023.118023">MyJump</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11677309/">MMPose</a>; <a href="https://apopt.com/hoops/hoops.php">AI Hoops</a></td>
+</tr>
+<tr>
+<td>Clip</td>
+<td>One shot per clip, trimmed, nobody crossing the frame; body height as the scale reference</td>
+<td><a href="https://apopt.com/hoops/hoops.php">AI Hoops</a>; <a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo</a></td>
+</tr>
+</tbody>
+</table>
+<p>30 fps already covers the three numbers that separated proficient from non-proficient recreational shooters in a 1,740-shot study filmed with ordinary side cameras and Kinovea: release angle (53-54° vs 44-50°), set-point elbow angle (58-60° vs 65-66°) and release height (1.47 vs 1.35 x body height on threes) (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8822900/">PMC8822900</a>); 240 fps buys jump height and dip-pause timing. Elbow flare and the ball's path across the face are frontal-plane items: keep the July front view for those and judge them by eye, since a 2D frontal knee-abduction read -22° against -2.3° in 3D in Noraxon's comparison (<a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">same source</a>). The practical risk is light: 240 fps caps the shutter at 1/240 s and the wrist failures above were blur-driven, so test one clip under the court lights first.</p>
+<h2 id="7-benchmarks-and-the-maths-of-shot-selection">7. Benchmarks and the maths of shot selection</h2>
+<p>Expected points per shot = make rate x point value (<a href="https://www.hoopcoach.org/?p=32126">Hoop Coach</a>). A three at 33% equals a two at 50%. Synergy's Shot Quality model gives each shot the points a league-average shooter would score from its distance, contest, shot type and play type (scale ~0-2, average 1.00); Shot Making = actual minus expected (<a href="https://sportradar.com/content-hub/blog/explaining-synergy-shot-quality/?lang=en-us">Sportradar</a>). Coaches Clipboard's threshold: a three is not a good shot for a player under 35% from the arc (<a href="https://www.coachesclipboard.net/basketball-shot-selection.html">Coaches Clipboard</a>). A 13-shot game can support the selection-vs-making split, not a make rate (7.3).</p>
+<h3 id="71-expected-points-by-zone-nba-points-per-attempt">7.1 Expected points by zone (NBA points per attempt)</h3>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>2021-22, to Dec 28</th>
+<th>1998-2018 average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restricted area</td>
+<td>1.285</td>
+<td>1.20</td>
+</tr>
+<tr>
+<td>Corner 3</td>
+<td>1.140</td>
+<td>1.16</td>
+</tr>
+<tr>
+<td>Above-the-break 3</td>
+<td>1.020</td>
+<td>1.05</td>
+</tr>
+<tr>
+<td>Paint, non-restricted</td>
+<td>0.828</td>
+<td>0.79</td>
+</tr>
+<tr>
+<td>Mid-range</td>
+<td>0.812</td>
+<td>0.79</td>
+</tr>
+</tbody>
+</table>
+<p>Sources: <a href="https://www.nba.com/news/nikola-jokic-ja-morant-among-top-10-paint-scorers">NBA.com</a>, <a href="https://www.hooperuniversity.com/coaching/improving-efficiency-through-shot-selection">Hooper University / ShotTracker</a>. A rim attempt is worth ~0.45 points more than a long two; a 30% three (0.90) beats a 40% long two (0.80). Barak's line: 2/5 threes = 1.20 PPS, 3/8 twos = 0.75, 12 points on 13 FGA = 0.92. The shape matches the league; the sample proves nothing yet.</p>
+<p>Whole-possession reference: NBA half-court offence ran ~0.86 points per possession in 2006-10, and teams shot later than the model optimum, so pros err by waiting, not by firing early (<a href="https://ar5iv.arxiv.org/html/1107.5793">Skinner</a>). With no shot clock the rule is: shoot when the shot's expected points beat ~0.9, otherwise keep the possession alive.</p>
+<h3 id="72-contest-touch-time-and-dribbles">7.2 Contest, touch time and dribbles</h3>
+<table>
+<thead>
+<tr>
+<th>Lever</th>
+<th>Finding</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nearest defender at release (19,386 NBA 3PA, 2012-13)</td>
+<td>~40% at 6+ ft; over 43% at 9+ ft; ~32.5% within 6 ft; 26.6% when a defender was within 6 ft 0.6 s before release</td>
+<td><a href="https://la.disneyresearch.com/wp-content/uploads/How-to-Get-an-Open-Shot-Analyzing-Team-Movement-in-Basketball-using-Tracking-Data-Paper.pdf">Lucey et al.</a></td>
+</tr>
+<tr>
+<td>Contest band</td>
+<td>Contested three (2-4 ft) 30.1% vs wide-open 38.4%; wide-open mid-range 45.3% (0.91 PPS, under a wide-open three's 1.15)</td>
+<td><a href="https://brianmccormick.substack.com/p/increasing-offensive-spacing">McCormick</a></td>
+</tr>
+<tr>
+<td>Touch time (early 2014-15)</td>
+<td>&lt;2 s .54 eFG; 2-6 s ~.44; 6+ s ~.437</td>
+<td><a href="https://coachingtoolbox.net/?p=10426">Shea via Coaching Toolbox</a></td>
+</tr>
+<tr>
+<td>Dribbles before shot</td>
+<td>0: 45.1% (n=44,959); 1: 38.8%; 2: 37.6%; 3: 36.6%; 6+: .398 FG%, 81.5 pts/100 (2006 charting)</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4395350/">Csapo &amp; Raab</a>, <a href="https://www.82games.com/dribbles.htm">82games</a></td>
+</tr>
+<tr>
+<td>Shot family (2024-25)</td>
+<td>C&amp;S three 37.4% (1.12 PPS); pull-up three 32.9% (0.99); pull-up two 42.5% (0.85); paint 57.1% (1.14)</td>
+<td><a href="https://www.nba.com/news/best-shooters-of-the-2024-25-season">NBA.com</a></td>
+</tr>
+</tbody>
+</table>
+<p>Caveats. Descriptive, not causal. Shea's buckets include transition and end-of-clock shots, and he warns against banning dribble jumpers: track the share and push it down (<a href="https://coachingtoolbox.net/basketball-drills/dribble-dribble-dribble-miss.html">Shea</a>). Lucey does not rank contest against distance; McCormick only says contest "appears to" matter slightly more, and that a step back of a foot or two costs nothing. The pull-up two after a long hold is the lowest-value family in every table; the cheap levers are space from the defender and time from the catch.</p>
+<h3 id="73-what-13-shots-can-and-cannot-tell-you">7.3 What 13 shots can and cannot tell you</h3>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>Rate</th>
+<th>Wilson 95% interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5/13 FG</td>
+<td>38%</td>
+<td>18-64%</td>
+</tr>
+<tr>
+<td>2/5 threes</td>
+<td>40%</td>
+<td>12-77%</td>
+</tr>
+<tr>
+<td>3/8 twos</td>
+<td>38%</td>
+<td>14-69%</td>
+</tr>
+<tr>
+<td>20/52 (4 games at this rate)</td>
+<td>38%</td>
+<td>27-52%</td>
+</tr>
+<tr>
+<td>50/130 (10 games)</td>
+<td>38%</td>
+<td>31-47%</td>
+</tr>
+</tbody>
+</table>
+<p>Formula per <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">Wikipedia</a>; values verified. Over half of the between-player variation in NBA 3P% within a season is chance (<a href="https://ar5iv.arxiv.org/html/1609.09830">Franks et al.</a>). An individual 3P% needs ~750 attempts to reach 0.7 reliability, and a shot-level expected-make model beats raw FG% whenever under 30% of a season is in hand (<a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a>); at 5 threes a week, 750 attempts is ~150 games. Team 3P% settles within 10% after ~160 attempts and 5% after ~300 (<a href="https://basketballanalyticslab.substack.com/p/finding-stability-when-early-season">Basketball Analytics Lab</a>), a convergence heuristic rather than a confidence interval (Wilson is still +/-7 and +/-5 points there); 300 FGA is ~23 weekly games. So: grade decisions per game, show every percentage as an interval, and make rate claims only over a rolling window.</p>
+<h3 id="74-what-to-track">7.4 What to track</h3>
+<p>Per shot, in the NBA tracking bins (<a href="https://nba-stats-tracking.readthedocs.io/en/stable/source/modules.html">nba_stats_tracking</a>); defender distance from a sideline camera is an estimate and is logged as one:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Bins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zone</td>
+<td>rim / paint non-RA / mid-range / corner 3 / ATB 3</td>
+</tr>
+<tr>
+<td>Nearest defender</td>
+<td>0-2 / 2-4 / 4-6 / 6+ ft</td>
+</tr>
+<tr>
+<td>Touch time</td>
+<td>&lt;2 / 2-6 / 6+ s</td>
+</tr>
+<tr>
+<td>Dribbles</td>
+<td>0 / 1 / 2 / 3-6 / 7+</td>
+</tr>
+<tr>
+<td>Shot family</td>
+<td>C&amp;S = jumper outside 10 ft, &lt;=2 s, 0 dribbles; pull-up = 1+ dribble; &lt;10 ft</td>
+</tr>
+<tr>
+<td>Paint touch first</td>
+<td>yes / no (D1: 1.061 PPP with, 0.706 without, <a href="https://shottracker.com/ball-reversals-or-paint-touches-use-analytics-to-learn-what-drives-efficiency-for-your-team/">ShotTracker</a>)</td>
+</tr>
+<tr>
+<td>Grade</td>
+<td>0-9: 9 wide-open layup, 7 open jumper in range, 5 practice shot, 3 bad shot (<a href="https://betterbasketball.com/?p=3513">Devenzio / PGC</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>Per game: expected vs actual points; rim-plus-three share (EuroLeague teams 75-86%; mid-range 13% of attempts at a league-worst 39% eFG, <a href="https://www.hudl.com/blog/beyond-the-arc-what-actually-wins-in-europe">Hudl</a>); open-shot share (NBA 3PA 2015-16: 39% wide-open, 42% open, 17% tight, 2% very tight, <a href="https://www.cbssports.com/nba/news/wide-open-3s-and-ranking-how-each-nba-team-fared-at-making-defenses-pay">CBS</a>; D1 guards: 39.3% guarded vs 55.0% unguarded, <a href="https://shottracker.com/blog-division-i-basketball-guarded-unguarded-shot-data-2026-27/">ShotTracker</a>); median touch time; share of shots after 3+ dribbles; and a Four Factors card of eFG%, turnovers per possession used, offensive rebounds and loose balls, assists, weighted 40/25/20/15 (<a href="https://www.basketball-reference.com/about/factors.html">Basketball-Reference</a>).</p>
+<p>Across games: cumulative eFG%, 3P% and 2P% with Wilson bands and markers at 160 and 300 attempts; rolling 5-game process metrics; a tendency becomes a "weakness" only after it repeats across 3-4 games.</p>
+<p>Yardsticks: amateur levels run below the NBA tables. One high-school team shot 30% from three over 23 games (<a href="https://wsb.wharton.upenn.edu/wp-content/uploads/2023/05/Kostacos_2023_Basketball_HS.pdf">Kostacos</a>); 3x3 World Cup long-range shots went in 25.2% vs 33.8% in 5v5 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9690679">PMC</a>); recreational pickup players hit 39 +/- 16% of free throws vs 65% for collegians, n=20 each (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6430392/">PMC</a>); amateurs take more dribble-preceded shots than pros (<a href="https://dehesa.unex.es/bitstream/10662/21361/1/1132-239X_18_Suppl.1_313.pdf">Ibanez et al.</a>). Barak's 46% eFG and 40% from three sit in that band. Move the process metrics; the percentages follow.</p>
+<h2 id="8-rebuilding-the-jump-shot-as-an-adult">8. Rebuilding the jump shot as an adult</h2>
+<p><strong>Consensus and the counter-arguments.</strong> Not all four July findings are defects.</p>
+<table>
+<thead>
+<tr>
+<th>July finding</th>
+<th>Mainstream view</th>
+<th>Counter-argument</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two-hand push</td>
+<td>Guide hand quiet, not absent: it "should actually come off the ball just before you release it" (<a href="https://www.coachesclipboard.net/Shooting.html">Coach's Clipboard</a>)</td>
+<td>Pro Shot: the off hand is "the glue to shooting"; do not drop it (<a href="https://www.proshotsystem.com/pro-shot/">Pro Shot</a>). Coach Nick's "Thumbers" lesson may treat thumb shooters as a type (unverified)</td>
+<td>Quiet it; keep it on the ball</td>
+</tr>
+<tr>
+<td>Elbow flare</td>
+<td>Guides still cue "elbow in" (<a href="https://www.coachesclipboard.net/Shooting.html">Clipboard</a>)</td>
+<td>Breakthrough: the elbow is "a symptom, but not the root cause"; lift the guide hand an inch at the set point and, if the ball stays put, placement is fine (<a href="https://www.breakthroughbasketball.com/training/beef-shooting-formula">Breakthrough</a>)</td>
+<td>Fix hand placement; never cue "elbow in" alone</td>
+</tr>
+<tr>
+<td>Ball dead-centre</td>
+<td>Ball on a line from the shooting eye to the rim, not between the eyes (<a href="https://www.coachesclipboard.net/Shooting.html">Clipboard</a>)</td>
+<td>A right-handed, left-eyed shooter brings the ball "right up the middle of his body" (<a href="https://www.active.com/basketball/articles/where-is-the-proper-shot-line-a">Active.com</a>)</td>
+<td>10-second eye test first; if cross-dominant, the centred ball stays</td>
+</tr>
+<tr>
+<td>Dip, pause, push</td>
+<td>The dip helps: 36 elite shooters shot better dipping at all four distances (4.29 vs 3.47 of 6 at 6.75 m, p&lt;0.001) (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a>)</td>
+<td>Penner did not measure pauses; "delete the stop" is a coaching inference. Nordland: "the ball does NOT stop" (<a href="https://www.swish22.com/swish-article-basketball-shooting-instruction-nobody-gave-you">Swish</a>)</td>
+<td>Keep the dip; the pause is the target</td>
+</tr>
+</tbody>
+</table>
+<p>The best case for one motion is game data: against a defender, 10 professionals released faster and higher (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22jump%20shot%22%20AND%20ABSTRACT:(kinematic%20OR%20release)%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json&amp;pageSize=10">Rojas et al. 2000</a>); a pause is what a close defender takes away.</p>
+<p><strong>Protocol with make counts.</strong> One change at a time, staged on the Five-A model (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Drill</th>
+<th>Count / target</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Awareness</td>
+<td>Contrast reps: old shot vs new shot, filmed</td>
+<td>50/50, then shift to new until the old one "feels strange"</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins</a></td>
+</tr>
+<tr>
+<td>Adjustment</td>
+<td>One-distance push release, plus eyes-closed and off-hand reps</td>
+<td>Swish 5, 10, 20 in a row; add range only by adding arc</td>
+<td><a href="https://www.swish22.com/swish-article-master-the-release-when-you-practice-shooting">Swish</a></td>
+</tr>
+<tr>
+<td>Adjustment</td>
+<td>Guide-hand trio: mirror hand, flat hand, thumb pinched on a coin</td>
+<td>3-6 ft, 2-3 min each; strap week 50 wall, 50 form at 4 ft, 50-100 from 8 ft, back 1 ft at 60%+</td>
+<td><a href="https://www.breakthroughbasketball.com/training/fixing-thumb-flick">Breakthrough</a></td>
+</tr>
+<tr>
+<td>Adjustment</td>
+<td>Daily close form shooting; 25-shot sets, swish 2 / make 1 / miss 0</td>
+<td>5 min daily; 25 x 5 days x 8 weeks = 1,000 charted; max 50 a set</td>
+<td><a href="https://www.coachesclipboard.net/FreeThrowShooting.html">Coach's Clipboard</a></td>
+</tr>
+<tr>
+<td>(Re)Automation</td>
+<td>Dipped one-motion catch-and-shoot at 3, 5 and 6 m</td>
+<td>20 per spot; move back at 70%+</td>
+<td><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner</a>, <a href="https://proskillsbasketball.com/?p=45459">Pro Skills</a></td>
+</tr>
+<tr>
+<td>(Re)Automation</td>
+<td>Vary the body, not the spot: new start state every rep</td>
+<td>3 x 18, no state repeated</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">Shamshiri et al.</a></td>
+</tr>
+<tr>
+<td>(Re)Automation</td>
+<td>27 Game: catch-and-shoot, one-dribble pull-up right and left, 3 spots x 3</td>
+<td>27 charted by type; pull-up target 5/10 per wing</td>
+<td><a href="https://blog.drdishbasketball.com/4-dr.-dish-shooting-drills-for-one-player-workouts">Dr Dish</a>, <a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></td>
+</tr>
+<tr>
+<td>Assurance</td>
+<td>Progressive contest: partner leaps at each shot, added once uncontested makes are "too easy"</td>
+<td>Chart contested makes separately</td>
+<td><a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah / Sheppard</a></td>
+</tr>
+</tbody>
+</table>
+<p>Benchmarks are high-school or pro numbers; no adult-recreational norms exist, so his first score is the baseline (<a href="https://coachingtoolbox.net/basketball-drills/decathlon-shooting-challenge.html">Coaching Toolbox</a>). Hopla charts every shot and holds 99% on close form work (<a href="https://www.davehopla.com/is-your-season-over/">Hopla</a>). The body-state study used adolescent novices; in unskilled adults blocked practice also transferred (d=1.39), so form blocks stay (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31079552&amp;resultType=core&amp;format=json">Porter et al. 2020</a>).</p>
+<p><strong>Timeline expectations.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Expect</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Performance</td>
+<td>Drops first; the old shot returns under pressure until (Re)Automation is done in game-like conditions</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins</a></td>
+</tr>
+<tr>
+<td>Practice-to-game lag</td>
+<td>A quiet-eye team gained 12% in practice only in year 1, then 54% to 76.6% in games in year 2</td>
+<td><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers</a></td>
+</tr>
+<tr>
+<td>Durable change</td>
+<td>"Up to 12 months", from golf and athletics cases, not basketball; then a gap before the next change</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins</a></td>
+</tr>
+<tr>
+<td>Documented rebuild</td>
+<td>Sheppard: 32% to 52% from three after a summer and a season of daily per-shot arc and depth readouts</td>
+<td><a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah</a></td>
+</tr>
+</tbody>
+</table>
+<p>Do not grade the rebuild on FG%: 5/13 has a 95% interval of 18-64%, and 3P% needs about 750 attempts to stabilise (<a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a>). Track miss direction (Welch: about 70% of 3-point misses are short, methodology unpublished) (<a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah</a>) and shot-to-shot consistency, the Five-A marker of re-automation (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">PMC</a>). Noah's founder calls feedback later than about half a second "essentially worthless" for fine motor change, so the report sets the agenda and the practice tool calls short/long per shot (<a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah</a>).</p>
+<p><strong>Keeping it under game pressure.</strong> Mechanics in practice, target in games: part-skill cues "fragment the movement under stress", so games get one rhythm word (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins</a>). External cues beat body-part cues across about 80 experiments (learning g 0.58; hoop 25.6% vs wrist 20.9% on free throws), though one study of trained players found the reverse and the pressure claim rests on one weak study (<a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Chua et al. 2021</a>). One analogy matched explicit rules on retention and held under pressure where the rules collapsed (<a href="https://scholars.hkbu.edu.hk/en/publications/analogy-learning-and-the-performance-of-motor-skills-under-pressu/">Lam, Maxwell &amp; Masters 2009</a>). Practice with consequences improved later performance under pressure, g=0.67 (<a href="https://shura.shu.ac.uk/25578/">Low et al.</a>). Quiet-eye training kept shooters accurate under defensive pressure; a long final fixation helped only when defended (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22quiet%20eye%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json&amp;pageSize=10">Vickers 2017; Klostermann 2018</a>). Differential practice beat blocked under induced anxiety in novices (<a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22contextual%20interference%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json">Taghizadeh 2026</a>), and foul-line repetition builds a spot skill jump shots do not get (<a href="https://experts.mcmaster.ca/scholarly-works/1313592">Keetch et al. 2005</a>), so train the pull-up across spots, dribbles and footwork. Split contested from uncontested attempts before judging form.</p>
+<h2 id="9-interesting-extras">9. Interesting extras</h2>
+<p>Twelve things the brief did not ask for. Each is cheap next to the pipeline work already done, and each changes a decision elsewhere in this report. GF marks a gap-fill finding that has not been through the fact-check pass.</p>
+<ol>
+<li>
+<p><strong>Put the phone 3-4 m up.</strong> Synergy films from half-court "above the crowd", Hudl from "at least halfway up the bleachers", and the one single-camera study that placed players to 11 cm shot from 7.6 m. Height cuts occlusion, ID switches and homography error at once; a railing or pole mount beats any model change. <a href="https://support.synergysports.com/support/solutions/articles/77000570456-camera-instructions-for-filming-games">Synergy filming instructions</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">padel homography study</a></p>
+</li>
+<li>
+<p><strong>Second phone at 240 fps, on the guide-hand side.</strong> Tripod 2 m away, 1.1 m high, one rep per clip. Three warm-up jumps give force-plate-grade jump height from flight time (ICC 0.985, bias -0.1 cm); five form reps give the release metrics the wide camera cannot see. Guide-hand side because pose models lose the off-camera side (left elbow F1 0.69 vs right wrist 1.0 for a right-hander). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11677309/">MMPose vs force plates</a>, <a href="https://www.termedia.pl/doi/10.5114/biolsport.2023.118023">MyJump frame rates</a>, <a href="https://apopt.com/hoops/hoops.php">filming spec</a>, <a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">camera-angle pose study</a></p>
+</li>
+<li>
+<p><strong>Two 20-minute strength sessions a week; drop static stretching.</strong> Strength training cut sports injuries to under a third across 25 trials; stretching did nothing (table). Lower-limb power falls about 1% a year after 30, and release height, not jump height, tracked makes in one force-plate study (18 players; abstract and tables disagree, so tentative). The squat rack is a shooting drill (GF). <a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22The%20effectiveness%20of%20exercise%20interventions%20to%20prevent%20sports%20injuries%22&amp;resultType=core&amp;format=json">Lauersen 2014</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8047469/">masters jump decline</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641682/">Amaro 2025</a></p>
+</li>
+<li>
+<p><strong>A 12-minute neuromuscular warm-up, logged.</strong> Balance holds, jump-and-stick landings, lunges, calf raises, build-up sprints. Basketball trials cut lower-extremity injuries 60-75% and ankle injuries 64-81%, but none enrolled recreational adults and the home programme failed on adherence (60% took part), so the tracker gets a warm-up checkbox next to the drill log (GF). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8446130/">Basketball warm-up review</a></p>
+</li>
+<li>
+<p><strong>Form work in 5-minute blocks on 3-4 days, not one 25-minute session.</strong> Spaced beat massed practice by d=0.46 overall and d=0.97 on simple psychomotor tasks; the gain shrinks with complexity, so one parameter per block. Most of that evidence is within-session rest; across-day spacing rests on one mirror-tracing study with overnight gains (GF). <a href="https://www.gwern.net/docs/spaced-repetition/1999-donovan.pdf">Donovan &amp; Radosevich 1999</a></p>
+</li>
+<li>
+<p><strong>Keep the fun outputs number-free.</strong> Measuring an enjoyable activity raised output but cut enjoyment and later engagement in six experiments; people predict the opposite (t(103)=6.06), and framing the activity as work removed the penalty. No live stats on game night, no numbers on the Top 10 or best-plays reel, and the quantified layer labelled "training review" behind a toggle he opens on purpose (GF). <a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a>, <a href="https://www.fuqua.duke.edu/duke-fuqua-insights/etkin-counting-steps">Duke Fuqua summary</a></p>
+</li>
+<li>
+<p><strong>One consent message and a shared/private render flag.</strong> Under the defender's privacy law the camera on a public court is not the exposure; publishing footage "likely to humiliate" (s.2(4)) is, and an October 2025 ruling's remedy was blur plus no onward sharing. Club and regulator guidance adds a one-time notice, an opt-out (blur by tracked box), private by default and a 6-12 month deletion rule. Never render a "worst plays" reel of other players. Not legal advice (GF). <a href="https://www.wipo.int/wipolex/en/text/347462">Privacy Law text</a>, <a href="https://www.afiklaw.com/updates/18938">Afik update</a>, <a href="https://www.dataprotection.ie/sites/default/files/uploads/2025-12/Sports-TakingPhotosandVideos.pdf">Irish DPC guidance</a>, <a href="https://www.smithsrugby.co.uk/veo-policy">club Veo policy</a></p>
+</li>
+<li>
+<p><strong>Run the 10-second eye-dominance test before moving the ball off his face.</strong> Hands in a circle at arm's length, sight an object, close one eye. A right-handed, left-eyed shooter brings the ball up the middle, so the July "dead-centre" finding may be correct for him and the real fix is hand placement. Coaching claim, no trial. <a href="https://www.active.com/basketball/articles/where-is-the-proper-shot-line-a">Active.com shot line</a></p>
+</li>
+<li>
+<p><strong>Keep the dip; target the pause.</strong> In 36 elite shooters, dipped catch-and-shoot reps scored higher at all four distances (high-school group at 6.75 m: 4.29 vs 3.47 on a 1-6 scale), including university habitual non-dippers. The study did not test pauses, so "delete the stop at the set point" is a coaching inference, and the dip costs some shot speed. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a></p>
+</li>
+<li>
+<p><strong>Split every stat by game 1 vs game 3.</strong> After 12 minutes of simulated play, top-league guards' entry angle fell 45.2° to 43.4°, release time rose 0.6 to 0.7 s and makes dropped 51.8% to 44.1% (accuracy CIs include zero). If the late numbers sag, prescribe legs and shot selection, not form. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10974731">Bourdas 2024</a></p>
+</li>
+<li>
+<p><strong>On a teammate's shot, go to the nearest elbow.</strong> Coaching rule of thumb: about 70% of wing and corner misses go long to the opposite side and 3-point misses fly over the bigs; crash only a true 50/50 ball, otherwise sprint back. No data behind the 70%, but it turns his loose-ball instinct into a position the tracker can grade every game. <a href="https://www.coachesclipboard.net/offensive-rebounding-and-transtion-defense.html">Coach's Clipboard</a></p>
+</li>
+<li>
+<p><strong>Score arc as a 40-47° band, and check the rim first.</strong> Noah says 45°, Spalding 44-50°, elite youth made threes entered at 44.0° vs 42.4° missed, and independent physics gives a 52° free-throw launch, about a 40° entry by the gap-fill's own calculation; what every source agrees on is depth consistency. Outdoor double rims have less give (no measured comparison), so calibrate make/miss on 50 known shots at his rim before crediting back-rim misses as near-makes (GF). <a href="https://www.sponet.de/sponet/Record/4014972?lng=en">Tran &amp; Silverberg 2008</a>, <a href="https://smartbasketball.spalding.com/pages/how-shot-arc-affects-shooting-accuracy">Spalding arc data</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7908352">Croatian entry-angle study</a>, <a href="https://www.basketballforcoaches.com/double-rims/">double rims</a></p>
+</li>
+</ol>
+<p>Numbers behind items 3 and 4:</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength training vs all sports injuries (25 RCTs, 26,610 people)</td>
+<td>RR 0.315 (0.207-0.480)</td>
+<td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22The%20effectiveness%20of%20exercise%20interventions%20to%20prevent%20sports%20injuries%22&amp;resultType=core&amp;format=json">Lauersen 2014</a></td>
+</tr>
+<tr>
+<td>Static stretching vs all sports injuries</td>
+<td>RR 0.963 (0.846-1.095)</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Strength training vs overuse injuries</td>
+<td>RR 0.527</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Multicomponent warm-up vs lower-extremity injuries (basketball trials)</td>
+<td>RR 0.25-0.40</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8446130/">PMC8446130</a></td>
+</tr>
+<tr>
+<td>Balance training vs ankle injuries (basketball trials)</td>
+<td>RR 0.19-0.36</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Adherence to a home wobble-board programme</td>
+<td>60% took part; median 9 sessions in 6 weeks</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Achilles ruptures: basketball share; incidence at 40-59</td>
+<td>42.6%; 2.0 to 3.5 per 100,000 person-years</td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/6259075">Lemme 2018</a></td>
+</tr>
+<tr>
+<td>Lower-limb power decline after age 30 (masters records)</td>
+<td>0.6-1.1% per year, linear to about 70</td>
+<td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22Age-associated%20power%20decline%22&amp;resultType=core&amp;format=json">Gava 2015</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-sources">10. Sources</h2>
+<p><strong>1. What the research says in one page</strong></p>
+<ul>
+<li><a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a></li>
+<li><a href="https://sportradar.com/content-hub/blog/explaining-synergy-shot-quality/?lang=en-us">Sportradar</a></li>
+<li><a href="https://www.nba.com/news/best-shooters-of-the-2024-25-season">NBA.com</a></li>
+<li><a href="http://web.archive.org/web/20150114072540/http://www.basketballanalyticsbook.com/2014/12/18/individual-touch-time-before-the-shot-cleveland-is-improving-atlanta-is-thriving-and-charlotte-is-struggling/">Shea via Wayback</a></li>
+<li><a href="https://www.bball-index.com/creating-more-predictive-stats/">Basketball Index</a></li>
+<li><a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Mödinger et al.</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1775088/full">Tannoubi et al.</a></li>
+<li><a href="https://pgcbasketball.com/blog/five-ways-to-improve-film-sessions-with-your-players/">PGC</a></li>
+<li><a href="https://www.hudl.com/blog/how-to-use-video-in-one-on-one-settings-to-maximize-player-development">Hudl</a></li>
+<li><a href="https://marshallmemo.com/issues/900e517d13cd992db0961d47ad0ac2ef/MarshMemo544.pdf">Marshall Memo on Gallimore &amp; Tharp</a></li>
+<li><a href="https://thescopes.org/assets/Uploads/36170e3d44/Middlemas.pdf">Middlemas 2017</a></li>
+<li><a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1809566/full">Wang et al. 2026</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Guadagnoli%22%20AND%20TITLE:%22error%20estimation%22&amp;resultType=core&amp;format=json">Guadagnoli &amp; Kohl 2001</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.571552/full">Mason, Farrow &amp; Hattie 2020</a></li>
+<li><a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Wulf 2013 review; Chua 2021 meta-analysis</a></li>
+<li><a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a></li>
+<li><a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo thesis</a></li>
+<li><a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah/Sheppard</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins, Five-A</a></li>
+<li><a href="https://www.gwern.net/docs/spaced-repetition/1999-donovan.pdf">Donovan &amp; Radosevich 1999</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641682/">Amaro 2025</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8047469/">Alvero-Cruz 2021</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22The%20effectiveness%20of%20exercise%20interventions%20to%20prevent%20sports%20injuries%22&amp;resultType=core&amp;format=json">Lauersen 2014</a></li>
+</ul>
+<p><strong>2. How to break down one player's offense reel</strong></p>
+<ul>
+<li><a href="https://fansided.com/2017/09/08/nylon-calculus-understanding-synergy-play-type-data/">Nylon Calculus</a></li>
+<li><a href="https://nba-stats-tracking.readthedocs.io/en/stable/source/modules.html">nba_stats_tracking</a></li>
+<li><a href="https://www2.kusports.com/weblogs/tale-tait/2021/nov/05/pass-drive-or-shoot-kus-bill-self-emphas/">KU Sports</a></li>
+<li><a href="https://la.disneyresearch.com/wp-content/uploads/How-to-Get-an-Open-Shot-Analyzing-Team-Movement-in-Basketball-using-Tracking-Data-Paper.pdf">Sloan 2014</a></li>
+<li><a href="https://shottracker.com/ball-reversals-or-paint-touches-use-analytics-to-learn-what-drives-efficiency-for-your-team/">link</a></li>
+<li><a href="https://roboflow.com/blog/how-to-build-an-ai-basketball-shot-evaluator">Roboflow</a></li>
+<li><a href="https://pgcbasketball.com/blog/how-to-coach-winning-shot-selection/">PGC</a></li>
+<li><a href="https://betterbasketball.com/?p=3513">Better Basketball</a></li>
+<li><a href="https://pgcbasketball.com/blog/good-shots-vs-great-shots/">PGC</a></li>
+<li><a href="https://patents.google.com/patent/US9283432B2/en">US9283432</a></li>
+<li><a href="https://archives.rpd-online.com/article/download/1335/1335-3994-1-PB.pdf">Llorca-Miralles 2013</a></li>
+<li><a href="https://www.hudl.com/blog/beyond-the-arc-what-actually-wins-in-europe">Hudl EuroLeague</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10974731">Bourdas 2024</a></li>
+<li><a href="https://lowmanhelp.substack.com/p/the-core-of-every-player-development">Lowman</a></li>
+<li><a href="https://betterbasketball.com/film-breakdown-part-2-conducting-team-video-sessions/">Better Basketball</a></li>
+</ul>
+<p><strong>3. Feedback that changes behaviour</strong></p>
+<ul>
+<li><a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a></li>
+<li><a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Chua et al. 2021</a></li>
+<li><a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2014/05/Wulf_AF_review_IRSEP_2013.pdf">Zachry 2005 in Wulf 2013</a></li>
+<li><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2010.00190/full">Wulf 2010</a></li>
+<li><a href="https://smartervolley.substack.com/p/99-external-cues">Winkelman summary</a></li>
+<li><a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Rucci &amp; Tomporowski 2010, in Mödinger</a></li>
+<li><a href="https://scholars.hkbu.edu.hk/en/publications/analogy-learning-and-the-performance-of-motor-skills-under-pressu/">Lam, Maxwell &amp; Masters 2009</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a></li>
+<li><a href="https://www.psychologicalscience.org/index.php/news/releases/thoughts-that-win.html">Hatzigeorgiadis 2011, APS summary</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3796837/">Sadowski 2013</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12467369/">29 studies, n = 1,147</a></li>
+<li><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00338/full">Aiken 2012</a></li>
+<li><a href="https://pgcbasketball.com/blog/five-ways-to-improve-film-sessions-with-your-players/">PGC</a></li>
+<li><a href="https://www.hudl.com/blog/how-to-use-video-in-one-on-one-settings-to-maximize-player-development">Hudl</a></li>
+<li><a href="https://pgcbasketball.com/blog/how-to-break-down-game-film-basketball-post-game-report-process/">PGC post-game</a></li>
+<li><a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah, Sheppard profile</a></li>
+<li><a href="https://keithlyons.me/bandwith-approach-to-supporting-learning">Chambers &amp; Vickers 2006, summary</a></li>
+<li><a href="https://doi.org/10.7717/peerj.7392">Gil-Arias 2019</a></li>
+<li><a href="https://www.creativitypost.com/article/praise_vs._criticism_which_is_more_effective">Tharp &amp; Gallimore summary</a></li>
+<li><a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1809566/full">Wang 2026 meta-analysis</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2011.00155/full">Ste-Marie 2011</a></li>
+<li><a href="https://mbj.ssrc.ac.ir/article_4893.html?lang=en">Heidari 2025</a></li>
+<li><a href="https://thescopes.org/assets/Uploads/36170e3d44/Middlemas.pdf">Middlemas 2017</a></li>
+<li><a href="https://ejournals.lib.hkbu.edu.hk/index.php/ajper/article/view/1777">Luk 2009</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">Shamshiri 2025</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31079552&amp;resultType=core&amp;format=json">Porter 2020</a></li>
+<li><a href="https://openscience.ub.uni-mainz.de/items/121b50fc-3b0c-48f3-9ada-08d340068f88/full">Ammar 2024</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22contextual%20interference%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json">Taghizadeh 2026; Keetch 2005</a></li>
+<li><a href="https://shura.shu.ac.uk/25578/">Low et al.</a></li>
+<li><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers 2001</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22quiet%20eye%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json&amp;pageSize=10">Vickers 2017, Klostermann 2018</a></li>
+</ul>
+<p><strong>4. Drill library mapped to weakness types</strong></p>
+<ul>
+<li><a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Chua et al. 2021</a></li>
+<li><a href="https://www.swish22.com/swish-article-basketball-shooting-instruction-nobody-gave-you">Nordland</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a></li>
+<li><a href="https://coachingtoolbox.net/basketball-drills/decathlon-shooting-challenge.html">Decathlon</a></li>
+<li><a href="https://teachhoops.com/basketball-3-minutes-shooting-drill/">Teach Hoops</a></li>
+<li><a href="https://coachingtoolbox.net/?p=10426">Shea via Coaching Toolbox</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4395350/">Csapo &amp; Raab</a></li>
+<li><a href="https://www.82games.com/dribbles.htm">82games</a></li>
+<li><a href="https://betterbasketball.com/?p=3513">Devenzio via Better Basketball</a></li>
+<li><a href="https://shottracker.com/ball-reversals-or-paint-touches-use-analytics-to-learn-what-drives-efficiency-for-your-team/">ShotTracker</a></li>
+<li><a href="https://www.active.com/basketball/articles/off-the-dribble-7">Active.com</a></li>
+<li><a href="https://www.coachup.com/nation/?p=1668">CoachUp</a></li>
+<li><a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></li>
+<li><a href="https://blog.drdishbasketball.com/4-dr.-dish-shooting-drills-for-one-player-workouts">Dr Dish drills</a></li>
+<li><a href="https://blog.drdishbasketball.com/basketball-shooting-footwork-1-2-vs.-the-hop">Dr Dish footwork</a></li>
+<li><a href="https://blog.drdishbasketball.com/skill-builder-lebron-james-pull-back-shooting">Dr Dish pull-back</a></li>
+<li><a href="https://playbank.fastmodelsports.com/library/basketball/fastdraw/243688/play-Steph-Curry-Relocate-Shooting-Drill">FastModel Curry drill</a></li>
+<li><a href="https://playbank.fastmodelsports.com/library/basketball/fastdraw/189879/play-Dr-Dish-Relocate-Challenge">Dr Dish Relocate Challenge</a></li>
+<li><a href="https://www.breakthroughbasketball.com/training/fixing-thumb-flick">Breakthrough</a></li>
+<li><a href="https://www.breakthroughbasketball.com/fundamentals/shooting/fix-guide-hand">guide-hand fix</a></li>
+<li><a href="https://www.breakthroughbasketball.com/training/beef-shooting-formula">Breakthrough</a></li>
+<li><a href="https://www.coachesclipboard.net/Shooting.html">Coach's Clipboard</a></li>
+<li><a href="https://www.active.com/basketball/articles/where-is-the-proper-shot-line-a">Active.com shot line</a></li>
+<li><a href="https://www.coachesclipboard.net/FreeThrowShooting.html">Clipboard FT page</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a></li>
+<li><a href="https://proskillsbasketball.com/?p=45459">Pro Skills</a></li>
+<li><a href="https://www.basketballforcoaches.com/mikan-drill/">Basketball for Coaches</a></li>
+<li><a href="https://coachingtoolbox.net/basketball-drills/finishing-thru-contact.html">Coaching Toolbox</a></li>
+<li><a href="https://coachesinsider.com/blog/2024/08/28/finishing-reading-the-defender-with-tj-rosene-emmanuel-college">TJ Rosene</a></li>
+<li><a href="https://halfcourthoops.substack.com/p/core-skills">Half Court Hoops</a></li>
+<li><a href="https://jssm.org/jssm-10-151.xml-Fulltext">JSSM 2011</a></li>
+<li><a href="https://www.breakthroughbasketball.com/training/scoring-footwork">Breakthrough</a></li>
+<li><a href="https://www.coachesclipboard.net/OutsideMoves.html">Coaches Clipboard</a></li>
+<li><a href="https://nbpa.com/grassroots/blog/jab-step-series-with-aaron-gordon">NBPA jab series</a></li>
+<li><a href="https://3points.substack.com/p/representative-learning-design">3 Points</a></li>
+<li><a href="https://www2.kusports.com/weblogs/tale-tait/2021/nov/05/pass-drive-or-shoot-kus-bill-self-emphas/">KU Sports</a></li>
+<li><a href="https://cna.fip.it/wp-content/uploads/2023/03/mario-de-sisti-1-on-1-perimeter.pdf">De Sisti</a></li>
+<li><a href="https://brianmccormick.substack.com/p/increasing-offensive-spacing">McCormick</a></li>
+<li><a href="https://la.disneyresearch.com/wp-content/uploads/How-to-Get-an-Open-Shot-Analyzing-Team-Movement-in-Basketball-using-Tracking-Data-Paper.pdf">Lucey et al.</a></li>
+<li><a href="https://www.nba.com/news/best-shooters-of-the-2024-25-season">NBA.com</a></li>
+<li><a href="https://www.coachesclipboard.net/DriveandKickDrill.html">Coaches Clipboard</a></li>
+<li><a href="https://www.coachesclipboard.net/offensive-rebounding-and-transtion-defense.html">Coaches Clipboard</a></li>
+<li><a href="https://pgcbasketball.com/blog/guards-get-elbow-offensive-boards">PGC</a></li>
+<li><a href="https://coachesinsider.com/mens-basketball/3-secrets-for-increasing-your-offensive-rebound-total-article">Coaches Insider</a></li>
+<li><a href="https://www.hooptactics.net/premium/coach/pdf/drills/drillboxdefender.pdf">HoopTactics</a></li>
+<li><a href="https://www.strengthlog.com/strength-training-for-basketball/">StrengthLog</a></li>
+<li><a href="https://myorthoevidence.com/AceReport/Show/fifa-11-injury-prevention-program-is-effective-for-elite-basketball-players">FIFA 11+</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/6259075">Lemme 2018</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10974731">Bourdas 2024</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">PMC12481044</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22contextual%20interference%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json">Keetch et al. via Europe PMC</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31079552&amp;resultType=core&amp;format=json">Porter 2020</a></li>
+<li><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers</a></li>
+<li><a href="https://www.davehopla.com/is-your-season-over/">Hopla</a></li>
+</ul>
+<p><strong>5. Output formats, compared</strong></p>
+<ul>
+<li><a href="https://publikationen.bibliothek.kit.edu/1000140910/135426798">Mödinger 2021</a></li>
+<li><a href="https://link.springer.com/article/10.1007/s12662-021-00782-y">Mödinger 2021</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1775088/full">Tannoubi 2026</a></li>
+<li><a href="https://pgcbasketball.com/blog/how-to-break-down-game-film-basketball-post-game-report-process/">PGC</a></li>
+<li><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2010.00190/full">Wulf 2010</a></li>
+<li><a href="https://thescopes.org/assets/Uploads/36170e3d44/Middlemas.pdf">Middlemas 2017</a></li>
+<li><a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1809566/full">Wang 2026</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2011.00155/full">Ste-Marie 2011</a></li>
+<li><a href="https://sportradar.com/content-hub/blog/explaining-synergy-shot-quality/?lang=en-us">Sportradar SSQ</a></li>
+<li><a href="http://web.archive.org/web/20150114072540/http://www.basketballanalyticsbook.com/2014/12/18/individual-touch-time-before-the-shot-cleveland-is-improving-atlanta-is-thriving-and-charlotte-is-struggling/">Shea 2014</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3796837/">Sadowski 2013</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Guadagnoli%22%20AND%20TITLE:%22error%20estimation%22&amp;resultType=core&amp;format=json">Guadagnoli &amp; Kohl 2001</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12467369/">meta-analysis</a></li>
+<li><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00338/full">Aiken 2012</a></li>
+<li><a href="https://researchportal.scu.edu.au/esploro/outputs/journalArticle/The-performance-and-psychological-effects-of/991013048913602368">Williamson 2022</a></li>
+<li><a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a></li>
+<li><a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a></li>
+<li><a href="https://scholars.hkbu.edu.hk/en/publications/analogy-learning-and-the-performance-of-motor-skills-under-pressu/">Lam et al. 2009</a></li>
+<li><a href="https://www.psychologicalscience.org/index.php/news/releases/thoughts-that-win.html">Hatzigeorgiadis 2011</a></li>
+<li><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers</a></li>
+<li><a href="https://www.kinovea.org/features.html">Kinovea</a></li>
+<li><a href="https://www.hudl.com/blog/which-parts-of-analysis-do-nba-players-value-the-most-atlanta-hawks-coach-nate-babcock-talks-video">Babcock, Hudl</a></li>
+<li><a href="https://hudl.com/blog/introducing-interactive-shot-charts">Hudl</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">padel study</a></li>
+<li><a href="https://ar5iv.labs.arxiv.org/html/2209.07795">KaliCalib</a></li>
+<li><a href="https://lowmanhelp.substack.com/p/the-core-of-every-player-development">Lowman</a></li>
+<li><a href="https://fastbreak.playbooktech.com/coaches-community/?p=2193">Fastbreak</a></li>
+<li><a href="https://fansided.com/2017/09/08/nylon-calculus-understanding-synergy-play-type-data/">Nylon Calculus</a></li>
+<li><a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo thesis</a></li>
+<li><a href="https://ar5iv.labs.arxiv.org/html/2109.09090">low-resolution HPE</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641682/">Amaro 2025</a></li>
+<li><a href="https://patents.google.com/patent/US9283432B2/en">Noah patent</a></li>
+<li><a href="https://www.sponet.de/sponet/Record/4014972?lng=en">Tran &amp; Silverberg 2008</a></li>
+<li><a href="https://arxiv.org/html/2506.13779v1">Zhu 2025</a></li>
+<li><a href="https://roboflow.com/blog/how-to-build-an-ai-basketball-shot-evaluator">Roboflow</a></li>
+<li><a href="https://www.wipo.int/wipolex/en/text/347462">WIPO text</a></li>
+<li><a href="https://cloud.google.com/transform/how-we-built-an-ai-basketball-coach-with-gemini">Google Cloud</a></li>
+</ul>
+<p><strong>6. What a single wide camera can and cannot measure</strong></p>
+<ul>
+<li><a href="https://ar5iv.labs.arxiv.org/html/2109.09090">Wang et al.</a></li>
+<li><a href="https://arxiv.org/pdf/2204.06806">YOLO-Pose</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">Javadiha et al.</a></li>
+<li><a href="https://uwspace.uwaterloo.ca/items/136c69c5-bd28-4f69-9d8c-d56cd5a9fb0f">Waterloo thesis</a></li>
+<li><a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">Thai camera-position study</a></li>
+<li><a href="https://roboflow.com/blog/how-to-build-an-ai-basketball-shot-evaluator">Roboflow</a></li>
+<li><a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah</a></li>
+<li><a href="https://ar5iv.labs.arxiv.org/html/2209.07795">KaliCalib</a></li>
+<li><a href="https://patents.google.com/patent/US9283432B2/en">Noah patent</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6056042/">Linke et al.</a></li>
+<li><a href="https://www.termedia.pl/doi/10.5114/biolsport.2023.118023">MyJump</a></li>
+<li><a href="https://arxiv.org/abs/2304.05170">SportsMOT</a></li>
+<li><a href="https://support.synergysports.com/support/solutions/articles/77000570456-camera-instructions-for-filming-games">Synergy filming instructions</a></li>
+<li><a href="https://www.homecourt.ai/faq/shotanalysis">HomeCourt FAQ</a></li>
+<li><a href="https://apopt.com/hoops/hoops.php">AI Hoops guide</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11677309/">MMPose vs force plates</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8822900/">PMC8822900</a></li>
+</ul>
+<p><strong>7. Benchmarks and the maths of shot selection</strong></p>
+<ul>
+<li><a href="https://www.hoopcoach.org/?p=32126">Hoop Coach</a></li>
+<li><a href="https://sportradar.com/content-hub/blog/explaining-synergy-shot-quality/?lang=en-us">Sportradar</a></li>
+<li><a href="https://www.coachesclipboard.net/basketball-shot-selection.html">Coaches Clipboard</a></li>
+<li><a href="https://www.nba.com/news/nikola-jokic-ja-morant-among-top-10-paint-scorers">NBA.com</a></li>
+<li><a href="https://www.hooperuniversity.com/coaching/improving-efficiency-through-shot-selection">Hooper University / ShotTracker</a></li>
+<li><a href="https://ar5iv.arxiv.org/html/1107.5793">Skinner</a></li>
+<li><a href="https://la.disneyresearch.com/wp-content/uploads/How-to-Get-an-Open-Shot-Analyzing-Team-Movement-in-Basketball-using-Tracking-Data-Paper.pdf">Lucey et al.</a></li>
+<li><a href="https://brianmccormick.substack.com/p/increasing-offensive-spacing">McCormick</a></li>
+<li><a href="https://coachingtoolbox.net/?p=10426">Shea via Coaching Toolbox</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4395350/">Csapo &amp; Raab</a></li>
+<li><a href="https://www.82games.com/dribbles.htm">82games</a></li>
+<li><a href="https://www.nba.com/news/best-shooters-of-the-2024-25-season">NBA.com</a></li>
+<li><a href="https://coachingtoolbox.net/basketball-drills/dribble-dribble-dribble-miss.html">Shea</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">Wikipedia</a></li>
+<li><a href="https://ar5iv.arxiv.org/html/1609.09830">Franks et al.</a></li>
+<li><a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a></li>
+<li><a href="https://basketballanalyticslab.substack.com/p/finding-stability-when-early-season">Basketball Analytics Lab</a></li>
+<li><a href="https://nba-stats-tracking.readthedocs.io/en/stable/source/modules.html">nba_stats_tracking</a></li>
+<li><a href="https://shottracker.com/ball-reversals-or-paint-touches-use-analytics-to-learn-what-drives-efficiency-for-your-team/">ShotTracker</a></li>
+<li><a href="https://betterbasketball.com/?p=3513">Devenzio / PGC</a></li>
+<li><a href="https://www.hudl.com/blog/beyond-the-arc-what-actually-wins-in-europe">Hudl</a></li>
+<li><a href="https://www.cbssports.com/nba/news/wide-open-3s-and-ranking-how-each-nba-team-fared-at-making-defenses-pay">CBS</a></li>
+<li><a href="https://shottracker.com/blog-division-i-basketball-guarded-unguarded-shot-data-2026-27/">ShotTracker</a></li>
+<li><a href="https://www.basketball-reference.com/about/factors.html">Basketball-Reference</a></li>
+<li><a href="https://wsb.wharton.upenn.edu/wp-content/uploads/2023/05/Kostacos_2023_Basketball_HS.pdf">Kostacos</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9690679">PMC</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6430392/">PMC</a></li>
+<li><a href="https://dehesa.unex.es/bitstream/10662/21361/1/1132-239X_18_Suppl.1_313.pdf">Ibanez et al.</a></li>
+</ul>
+<p><strong>8. Rebuilding the jump shot as an adult</strong></p>
+<ul>
+<li><a href="https://www.coachesclipboard.net/Shooting.html">Coach's Clipboard</a></li>
+<li><a href="https://www.proshotsystem.com/pro-shot/">Pro Shot</a></li>
+<li><a href="https://www.breakthroughbasketball.com/training/beef-shooting-formula">Breakthrough</a></li>
+<li><a href="https://www.active.com/basketball/articles/where-is-the-proper-shot-line-a">Active.com</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a></li>
+<li><a href="https://www.swish22.com/swish-article-basketball-shooting-instruction-nobody-gave-you">Swish</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5020347/">Carson &amp; Collins 2016</a></li>
+<li><a href="https://www.swish22.com/swish-article-master-the-release-when-you-practice-shooting">Swish</a></li>
+<li><a href="https://www.breakthroughbasketball.com/training/fixing-thumb-flick">Breakthrough</a></li>
+<li><a href="https://www.coachesclipboard.net/FreeThrowShooting.html">Coach's Clipboard</a></li>
+<li><a href="https://proskillsbasketball.com/?p=45459">Pro Skills</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12481044/">Shamshiri et al.</a></li>
+<li><a href="https://blog.drdishbasketball.com/4-dr.-dish-shooting-drills-for-one-player-workouts">Dr Dish</a></li>
+<li><a href="https://joinstriveon.com/blog/basketball-shooting-drills">StriveOn</a></li>
+<li><a href="https://www.noahbasketball.com/blog/reed-sheppard">Noah / Sheppard</a></li>
+<li><a href="https://coachingtoolbox.net/basketball-drills/decathlon-shooting-challenge.html">Coaching Toolbox</a></li>
+<li><a href="https://www.davehopla.com/is-your-season-over/">Hopla</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31079552&amp;resultType=core&amp;format=json">Porter et al. 2020</a></li>
+<li><a href="https://www.physicaleducationupdate.com/public/222.cfm">Harle &amp; Vickers</a></li>
+<li><a href="https://ar5iv.arxiv.org/html/1808.04871">Daly-Grafstein &amp; Bornn</a></li>
+<li><a href="https://gwulf.faculty.unlv.edu/wp-content/uploads/2021/12/Chua_EF_meta-analyses_PB_2021.pdf">Chua et al. 2021</a></li>
+<li><a href="https://scholars.hkbu.edu.hk/en/publications/analogy-learning-and-the-performance-of-motor-skills-under-pressu/">Lam, Maxwell &amp; Masters 2009</a></li>
+<li><a href="https://shura.shu.ac.uk/25578/">Low et al.</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22quiet%20eye%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json&amp;pageSize=10">Vickers 2017; Klostermann 2018</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22contextual%20interference%22%20AND%20ABSTRACT:basketball&amp;resultType=core&amp;format=json">Taghizadeh 2026</a></li>
+<li><a href="https://experts.mcmaster.ca/scholarly-works/1313592">Keetch et al. 2005</a></li>
+</ul>
+<p><strong>9. Interesting extras</strong></p>
+<ul>
+<li><a href="https://support.synergysports.com/support/solutions/articles/77000570456-camera-instructions-for-filming-games">Synergy filming instructions</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8151013/">padel homography study</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11677309/">MMPose vs force plates</a></li>
+<li><a href="https://www.termedia.pl/doi/10.5114/biolsport.2023.118023">MyJump frame rates</a></li>
+<li><a href="https://apopt.com/hoops/hoops.php">filming spec</a></li>
+<li><a href="https://so03.tci-thaijo.org/index.php/tahper/article/view/283466">camera-angle pose study</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22The%20effectiveness%20of%20exercise%20interventions%20to%20prevent%20sports%20injuries%22&amp;resultType=core&amp;format=json">Lauersen 2014</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8047469/">masters jump decline</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641682/">Amaro 2025</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8446130/">Basketball warm-up review</a></li>
+<li><a href="https://www.gwern.net/docs/spaced-repetition/1999-donovan.pdf">Donovan &amp; Radosevich 1999</a></li>
+<li><a href="https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Etkin-Jordan-11-12-15-Hidden-Cost.pdf">Etkin 2016</a></li>
+<li><a href="https://www.fuqua.duke.edu/duke-fuqua-insights/etkin-counting-steps">Duke Fuqua summary</a></li>
+<li><a href="https://www.wipo.int/wipolex/en/text/347462">Privacy Law text</a></li>
+<li><a href="https://www.afiklaw.com/updates/18938">Afik update</a></li>
+<li><a href="https://www.dataprotection.ie/sites/default/files/uploads/2025-12/Sports-TakingPhotosandVideos.pdf">Irish DPC guidance</a></li>
+<li><a href="https://www.smithsrugby.co.uk/veo-policy">club Veo policy</a></li>
+<li><a href="https://www.active.com/basketball/articles/where-is-the-proper-shot-line-a">Active.com shot line</a></li>
+<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.658102/full">Penner 2021</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10974731">Bourdas 2024</a></li>
+<li><a href="https://www.coachesclipboard.net/offensive-rebounding-and-transtion-defense.html">Coach's Clipboard</a></li>
+<li><a href="https://www.sponet.de/sponet/Record/4014972?lng=en">Tran &amp; Silverberg 2008</a></li>
+<li><a href="https://smartbasketball.spalding.com/pages/how-shot-arc-affects-shooting-accuracy">Spalding arc data</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7908352">Croatian entry-angle study</a></li>
+<li><a href="https://www.basketballforcoaches.com/double-rims/">double rims</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/6259075">Lemme 2018</a></li>
+<li><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22Age-associated%20power%20decline%22&amp;resultType=core&amp;format=json">Gava 2015</a></li>
+</ul></section>
+</div></body></html>

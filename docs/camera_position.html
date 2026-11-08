@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camera Setup Guide</title>
+<style>
+  :root {
+    --bg: #f6f5f2; --card: #ffffff; --ink: #1b1e23; --mut: #5f6773; --line: #d9dce1;
+    --court: #3f7a6b; --paint: #b0543c; --lines: #ffffff; --cam: #ff7a1a; --fov: rgba(255,122,26,.18);
+    --bad: #d02c2c; --ok: #1e8a4c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101318; --card: #181c22; --ink: #e9edf2; --mut: #9aa4b0; --line: #2a313a;
+      --court: #2f5d52; --paint: #8e4331; --fov: rgba(255,122,26,.22);
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, "Segoe UI", sans-serif; }
+  main { max-width: 1000px; margin: 0 auto; padding: 28px 16px 60px; }
+  h1 { font-size: 30px; margin: 0 0 4px; letter-spacing: -.01em; }
+  .sub { color: var(--mut); margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 0 0 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin-bottom: 18px; }
+  svg { width: 100%; height: auto; display: block; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  ul { margin: 8px 0 0; padding-left: 20px; } li { margin: 4px 0; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+         padding: 2px 10px; border-radius: 9999px; color: #fff; background: var(--cam); margin-bottom: 6px; }
+  .tag.bad { background: var(--bad); }
+  .num { font-variant-numeric: tabular-nums; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  td { padding: 7px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--mut); width: 38%; }
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; color: var(--mut); font-size: 14px; margin-top: 10px; }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; margin-right: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Where to put the camera</h1>
+  <p class="sub">Use the same spot every game so the rim and the 3-point arc land in the same place in the frame. That keeps make/miss and 2-vs-3 calls consistent.</p>
+
+  <section class="card">
+    <h2>Top view: both setups</h2>
+    <svg viewBox="0 0 960 700" role="img" aria-label="Top view of a basketball court with two camera positions">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--mut)"/>
+        </marker>
+      </defs>
+      <!-- court 28 x 15 m at 30 px/m, origin (60,60) -->
+      <rect x="60" y="60" width="840" height="450" fill="var(--court)" rx="4"/>
+      <g fill="none" stroke="var(--lines)" stroke-width="2.5">
+        <rect x="60" y="60" width="840" height="450"/>
+        <line x1="480" y1="60" x2="480" y2="510"/>
+        <circle cx="480" cy="285" r="54"/>
+        <!-- left key + FT circle -->
+        <rect x="60" y="211.5" width="174" height="147" fill="var(--paint)"/>
+        <circle cx="234" cy="285" r="54"/>
+        <!-- right key -->
+        <rect x="726" y="211.5" width="174" height="147" fill="var(--paint)"/>
+        <circle cx="726" cy="285" r="54"/>
+        <!-- 3pt lines -->
+        <path d="M60,87 L150,87 A202.5,202.5 0 0 1 150,483 L60,483"/>
+        <path d="M900,87 L810,87 A202.5,202.5 0 0 0 810,483 L900,483"/>
+      </g>
+      <!-- rims -->
+      <circle cx="107" cy="285" r="7" fill="none" stroke="#ff9c4a" stroke-width="3"/>
+      <circle cx="853" cy="285" r="7" fill="none" stroke="#ff9c4a" stroke-width="3"/>
+      <line x1="84" y1="264" x2="84" y2="306" stroke="var(--lines)" stroke-width="4"/>
+      <line x1="876" y1="264" x2="876" y2="306" stroke="var(--lines)" stroke-width="4"/>
+
+      <!-- HALF COURT camera: FT-line level, 3 m off sideline, aimed at (190,285) -->
+      <path d="M234,600 L -40,330 L 300,110 Z" fill="var(--fov)" stroke="var(--cam)" stroke-width="1.5" stroke-dasharray="6 5"/>
+      <circle cx="234" cy="600" r="13" fill="var(--cam)"/>
+      <text x="234" y="605" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1</text>
+      <text x="255" y="628" font-size="15" font-weight="700" fill="var(--ink)">Half court</text>
+      <text x="255" y="647" font-size="13" fill="var(--mut)">level with FT line, 3 m off sideline</text>
+      <line x1="234" y1="512" x2="234" y2="585" stroke="var(--mut)" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+      <text x="216" y="552" font-size="13" text-anchor="end" fill="var(--mut)">3 m</text>
+
+      <!-- FULL COURT camera: centre line, 4.5 m off sideline, ultra-wide -->
+      <path d="M480,645 L 40,40 L 920,40 Z" fill="none" stroke="var(--cam)" stroke-width="1.5" stroke-dasharray="2 5"/>
+      <circle cx="480" cy="645" r="13" fill="var(--cam)"/>
+      <text x="480" y="650" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text>
+      <text x="500" y="672" font-size="15" font-weight="700" fill="var(--ink)">Full court</text>
+      <text x="500" y="691" font-size="13" fill="var(--mut)">centre line, 4–5 m off sideline, ultra-wide lens</text>
+      <line x1="492" y1="512" x2="492" y2="630" stroke="var(--mut)" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+      <text x="502" y="578" font-size="13" fill="var(--mut)">4–5 m</text>
+
+      <!-- AVOID: under the basket, looking lengthwise (what game 1 did in the 2nd half) -->
+      <g transform="translate(22,285)">
+        <line x1="-11" y1="-11" x2="11" y2="11" stroke="var(--bad)" stroke-width="4"/>
+        <line x1="-11" y1="11" x2="11" y2="-11" stroke="var(--bad)" stroke-width="4"/>
+      </g>
+      <text x="22" y="45" font-size="13" fill="var(--bad)" font-weight="700">✕ not here</text>
+    </svg>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--cam)"></span>Camera</span>
+      <span><span class="dot" style="background:var(--fov)"></span>Field of view</span>
+      <span><span class="dot" style="background:var(--bad)"></span>Avoid: under a basket, shooting lengthwise</span>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <span class="tag">Setup 1</span>
+      <h2>Half court (one basket)</h2>
+      <table>
+        <tr><td>Where</td><td>Beside the court, level with the free-throw line, <span class="num">3 m</span> back from the sideline</td></tr>
+        <tr><td>Height</td><td><span class="num">2.5–3 m</span> (pole or fence)</td></tr>
+        <tr><td>Aim</td><td>About <span class="num">30°</span> toward the basket</td></tr>
+        <tr><td>Lens</td><td>Main 1x</td></tr>
+        <tr><td>In frame</td><td>Rim in the upper third, about ⅓ in from the side. Whole arc, both corners, the key and the top of the arc all visible.</td></tr>
+      </table>
+    </section>
+    <section class="card">
+      <span class="tag">Setup 2</span>
+      <h2>Full court</h2>
+      <table>
+        <tr><td>Where</td><td>At the centre line, <span class="num">4–5 m</span> back from the sideline</td></tr>
+        <tr><td>Height</td><td>As high as you can, ideally <span class="num">3 m+</span></td></tr>
+        <tr><td>Aim</td><td>Straight across the court, horizon level</td></tr>
+        <tr><td>Lens</td><td>Ultra-wide (0.5x/0.6x). With the 1x lens you'd need to stand around 18 m back to fit both baskets.</td></tr>
+        <tr><td>In frame</td><td>Both baskets and both baselines, with a little margin at each edge</td></tr>
+      </table>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Side view: height and tilt</h2>
+    <svg viewBox="0 0 900 300" role="img" aria-label="Side view showing camera height and tilt relative to the rim">
+      <line x1="20" y1="260" x2="880" y2="260" stroke="var(--mut)" stroke-width="2"/>
+      <!-- pole + phone -->
+      <line x1="110" y1="260" x2="110" y2="125" stroke="var(--mut)" stroke-width="4"/>
+      <rect x="100" y="112" width="30" height="18" rx="3" fill="var(--cam)"/>
+      <path d="M130,121 L 870,55 L 870,260 Z" fill="var(--fov)"/>
+      <text x="140" y="110" font-size="14" fill="var(--ink)" font-weight="700">Phone at 2.5–3 m</text>
+      <text x="140" y="160" font-size="13" fill="var(--mut)">slight downward tilt (~5–10°)</text>
+      <!-- hoop -->
+      <line x1="800" y1="260" x2="800" y2="80" stroke="var(--mut)" stroke-width="5"/>
+      <line x1="800" y1="90" x2="770" y2="90" stroke="var(--mut)" stroke-width="4"/>
+      <line x1="770" y1="70" x2="770" y2="130" stroke="var(--ink)" stroke-width="3"/>
+      <line x1="770" y1="117" x2="735" y2="117" stroke="#ff9c4a" stroke-width="4"/>
+      <path d="M737,117 L743,140 L762,140 L768,117" fill="none" stroke="var(--mut)" stroke-width="2"/>
+      <text x="690" y="108" font-size="13" text-anchor="end" fill="var(--mut)">rim 3.05 m</text>
+      <text x="450" y="290" font-size="13" text-anchor="middle" fill="var(--mut)">The camera sits just below rim height, so the ball's path into the net stays visible</text>
+    </svg>
+  </section>
+
+  <section class="card">
+    <h2>Phone settings and checklist</h2>
+    <div class="grid">
+      <ul>
+        <li>Landscape, 1080p. Use <b>60 fps</b> if the phone allows (cleaner slow-mo and rim checks).</li>
+        <li>Lock focus and exposure (long-press on the rim, then lock).</li>
+        <li>No zoom during the game, and never move the camera mid-session.</li>
+        <li>Plug into a power bank, and make sure you have at least 10 GB free.</li>
+      </ul>
+      <ul>
+        <li>Keep the rim against a plain, dark background, not a floodlight.</li>
+        <li>No players or bags between the camera and the rim.</li>
+        <li>Before starting, check the whole 3-point arc is in frame. That's how shots get marked as 2 or 3.</li>
+        <li>If you must move the camera, stop and restart the recording.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>

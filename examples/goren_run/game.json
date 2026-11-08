@@ -1,0 +1,352 @@
+{
+ "video": "<project>/recap_2026-11-06/game_live.mp4",
+ "work": "<project>/recap_2026-11-06/work",
+ "date": "06.11.2026",
+ "title": "GOREN PICKUP",
+ "lang": "en",
+ "user": {
+  "name": "Barak",
+  "team_color": "none",
+  "setups": [
+   "S01",
+   "S02",
+   "S03",
+   "S04",
+   "S05",
+   "S06",
+   "S07",
+   "S08",
+   "S09",
+   "S10",
+   "S11"
+  ],
+  "look": "to be named on the naming page",
+  "reference": ""
+ },
+ "teams": [],
+ "plain_players": true,
+ "_setups_note": "game_live.mp4 = 11 live segments cut from 8 videos (data/live_segments.json maps back; video 8 flipped 180 to match the shared rotation tag). Hoop A (Barak's pick, confirmed per video) = H1..H8 per source video; camera is steady inside each video (hoop_track.json) except the first 36 s of video 7 (cut from S09).",
+ "setups": [
+  {
+   "name": "S01",
+   "start": 0.0,
+   "end": 423.06,
+   "court": "half",
+   "hoops": [
+    "H1"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S02",
+   "start": 423.11,
+   "end": 493.35,
+   "court": "half",
+   "hoops": [
+    "H1"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S03",
+   "start": 493.4,
+   "end": 875.37,
+   "court": "half",
+   "hoops": [
+    "H2"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S04",
+   "start": 875.42,
+   "end": 940.48,
+   "court": "half",
+   "hoops": [
+    "H2"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S05",
+   "start": 940.53,
+   "end": 1472.59,
+   "court": "half",
+   "hoops": [
+    "H3"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S06",
+   "start": 1472.64,
+   "end": 2344.61,
+   "court": "half",
+   "hoops": [
+    "H4"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S07",
+   "start": 2344.66,
+   "end": 2788.75,
+   "court": "half",
+   "hoops": [
+    "H5"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S08",
+   "start": 2788.8,
+   "end": 3293.78,
+   "court": "half",
+   "hoops": [
+    "H6"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S09",
+   "start": 3330.03,
+   "end": 3612.81,
+   "court": "half",
+   "hoops": [
+    "H7"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S10",
+   "start": 3612.86,
+   "end": 3790.52,
+   "court": "half",
+   "hoops": [
+    "H7"
+   ],
+   "pinnies": false
+  },
+  {
+   "name": "S11",
+   "start": 3790.57,
+   "end": 4304.29,
+   "court": "half",
+   "hoops": [
+    "H8"
+   ],
+   "pinnies": false
+  }
+ ],
+ "hoops": {
+  "H1": {
+   "rim": [
+    798,
+    211
+   ],
+   "rim_y": 211,
+   "net": [
+    785,
+    814,
+    238
+   ],
+   "roi": [
+    718,
+    116,
+    878,
+    286
+   ],
+   "strip_crop": [
+    703,
+    86,
+    893,
+    301
+   ],
+   "ctx_crop": null,
+   "small": true
+  },
+  "H2": {
+   "rim": [
+    1092,
+    420
+   ],
+   "rim_y": 420,
+   "net": [
+    1076,
+    1101,
+    444
+   ],
+   "roi": [
+    1012,
+    325,
+    1172,
+    495
+   ],
+   "strip_crop": [
+    997,
+    295,
+    1187,
+    510
+   ],
+   "ctx_crop": null,
+   "small": true
+  },
+  "H3": {
+   "rim": [
+    898,
+    424
+   ],
+   "rim_y": 424,
+   "net": [
+    891,
+    912,
+    446
+   ],
+   "roi": [
+    818,
+    329,
+    978,
+    499
+   ],
+   "strip_crop": [
+    803,
+    299,
+    993,
+    514
+   ],
+   "ctx_crop": null,
+   "small": true
+  },
+  "H4": {
+   "rim": [
+    1414,
+    405
+   ],
+   "rim_y": 405,
+   "net": [
+    1397,
+    1424,
+    430
+   ],
+   "roi": [
+    1334,
+    310,
+    1494,
+    480
+   ],
+   "strip_crop": [
+    1319,
+    280,
+    1509,
+    495
+   ],
+   "ctx_crop": null,
+   "small": true
+  },
+  "H5": {
+   "rim": [
+    914,
+    428
+   ],
+   "rim_y": 428,
+   "net": [
+    905,
+    928,
+    450
+   ],
+   "roi": [
+    834,
+    333,
+    994,
+    503
+   ],
+   "strip_crop": [
+    819,
+    303,
+    1009,
+    518
+   ],
+   "ctx_crop": null,
+   "small": true
+  },
+  "H6": {
+   "rim": [
+    1498,
+    400
+   ],
+   "rim_y": 400,
+   "net": [
+    1481,
+    1510,
+    430
+   ],
+   "roi": [
+    1418,
+    305,
+    1578,
+    475
+   ],
+   "strip_crop": [
+    1403,
+    275,
+    1593,
+    490
+   ],
+   "ctx_crop": null,
+   "small": true
+  },
+  "H7": {
+   "rim": [
+    933,
+    254
+   ],
+   "rim_y": 254,
+   "net": [
+    908,
+    953,
+    302
+   ],
+   "roi": [
+    833,
+    159,
+    1033,
+    329
+   ],
+   "strip_crop": [
+    818,
+    129,
+    1048,
+    344
+   ],
+   "ctx_crop": null,
+   "small": false
+  },
+  "H8": {
+   "rim": [
+    794,
+    364
+   ],
+   "rim_y": 364,
+   "net": [
+    786,
+    808,
+    391
+   ],
+   "roi": [
+    714,
+    269,
+    874,
+    439
+   ],
+   "strip_crop": [
+    699,
+    239,
+    889,
+    454
+   ],
+   "ctx_crop": null,
+   "small": true
+  }
+ },
+ "naming_suggest": false
+}
