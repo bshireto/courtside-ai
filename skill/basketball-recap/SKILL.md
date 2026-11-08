@@ -197,4 +197,4 @@ bench/fence/extension pole), locked exposure/focus, no zoom.
 - Nothing from the 06.11 Goren run in a public asset (Barak, 2026-11-08); the 07.10 game is shown as 05.10 in public
   (`tools/publish_recap_0510.py`). Never screenshot the Investing-templated review pages for public use.
 - The public repo is a scrubbed export, never edited by hand: `python tools/export_public.py` then commit and push in
-  `Shireto private/courtside-ai/` (it replaces friends' first names with roles and refuses to finish if one is left).
+  the `courtside-ai/` folder next to this project (it replaces friends' first names with roles and refuses to finish if one is left).
