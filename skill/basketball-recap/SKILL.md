@@ -188,3 +188,13 @@ bench/fence/extension pole), locked exposure/focus, no zoom.
 - **Full court**: centre line, ~4–5 m back from the sideline, as high as possible, both baskets and both baselines
   in frame, level horizon. Never under a basket shooting lengthwise (far rim becomes ~15 px and unreadable —
   that is what broke the first game's second half).
+
+## Public copies (added 2026-11-08, the day the project went public as `courtside-ai`)
+
+- Nothing leaves the machine with a friend's face readable: `pipeline/blur_faces.py <in> <out> --keep-user` (video or image; YuNet
+  faces + YOLO head zones every frame; the stored user model keeps Barak sharp; `--keep-box x0,y0,x1,y1` for his head when the
+  recogniser is unsure; `--hook file.py` for per-frame patches such as a rewritten date). Box score: `BB_BLUR_OTHERS=1 stats_poster.py`.
+- Nothing from the 06.11 Goren run in a public asset (Barak, 2026-11-08); the 07.10 game is shown as 05.10 in public
+  (`tools/publish_recap_0510.py`). Never screenshot the Investing-templated review pages for public use.
+- The public repo is a scrubbed export, never edited by hand: `python tools/export_public.py` then commit and push in
+  `Shireto private/courtside-ai/` (it replaces friends' first names with roles and refuses to finish if one is left).

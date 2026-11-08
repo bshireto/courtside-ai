@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-11-08 - The project goes public (`courtside-ai`), explainers, blurred copies, laptop handover
+
+Barak's decisions: `docs/share-plan-decision-map.html` (11 calls) and `docs/laptop-handover-decision-map.html` (3 calls).
+
+- **Public repo** https://github.com/bshireto/courtside-ai (personal GitHub, MIT): a scrubbed export of this folder made by
+  `tools/export_public.py` (pipeline, coaching-review tools, the skill with generalised paths, docs, one example config, the
+  explainer source; friends' first names, Latin and Hebrew, replaced by roles; no footage, no face data). Release v0.1 carries
+  both explainers, the blurred recap, one English coaching clip and the box score.
+- **Explainer video** (`explainer/`, Remotion 4.0.541, 1080x1920, 67 s): navy / blue / yellow, Inter; a Hebrew composition
+  (`ExplainerHE`, Heebo, plain words) next to the English one. Footage only from the 07.10 game, faces blurred except Barak's.
+  Music "Funky Chunk" by Kevin MacLeod (CC BY 4.0), credited on the end card. Remotion 4.0.0 decoded 1080-wide clips as streaks.
+- **Face blur for public copies**: `pipeline/blur_faces.py` (YuNet faces + YOLO head zones every frame, the stored "is this the
+  user" model keeps Barak sharp, `--keep-box`, image mode, a hook for per-frame patches). `stats_poster.py` gained
+  `BB_BLUR_OTHERS=1` and a frame fallback to the video when the 5 fps dump is gone.
+- **Public 07.10 recap** `recap_2026-10-07/output/Every_Basket_Recap_public_0510.mp4` (+ WhatsApp copy): every face blurred except
+  Barak's, the date rewritten to 05.10.2026 on the title, the nine stat cards and the end card (`tools/publish_recap_0510.py`,
+  adaptive to the card fades; the card text x comes from each card's photo width).
+- **English coaching clip** `analysis_2026-10-07/clips/drives/drive_c15_en_blur.mp4` from `work/drivevid/spec_c15_en.json`
+  (teammates named by role, English simulation still).
+- **X thread** (15 posts, one picture or video each) `docs/share/x-thread.md` + `docs/share/attachments/`
+  (`tools/make_thread_images.py`); WhatsApp text in Hebrew `docs/share/whatsapp.md`; both state the two open issues (the workflow
+  still prompts wrong steps at times; the judgement calls need the premium models, so a game spans several sessions).
+- **Rule from Barak**: nothing from the 06.11 Goren run in any public asset; the 07.10 game is shown as 05.10 in public.
+- **Laptop handover**: `migration-kit/03-copy-basketball.ps1 -Tier B` (project, repo, skill, memory to the SSD, no frame dump, no
+  raw clips) and `migration-kit/restore-basketball.ps1` on the new laptop (four folders, memory under both keys, prints the venv
+  rebuild). The raw Goren clips stay on the old laptop only (his call).
+
 ## 2026-10-08 - Recap of the 07.10.2026 game (`recap_2026-10-07`)
 
 Outputs in `recap_2026-10-07/output/`: every-basket recap with nine player stats cards, Top 10 countdown (landscape + vertical,
