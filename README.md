@@ -105,6 +105,13 @@ Two things are not solved, and you should know before you start:
 - **The workflow is not nailed yet.** The skill is a procedure written from three games, and the agent still sometimes prompts the wrong step. On the November run it asked for the scorer's name basket by basket, when the right move is one naming page for everyone and attribution from the shots afterwards. Expect to steer it; read the skill before a run and correct it when it drifts.
 - **The judgement calls need the premium models.** Make / miss votes, shooter attribution, the ball path for the vertical cut and the coaching review were all done with the top-tier Claude models, not Sonnet; Sonnet got makes and shooters wrong too often to be worth the saving. On a Claude subscription that means a full game is spread across several sessions as the usage limits reset, and the workflows need resuming (`RESUME.md` in each game folder, `resumeFromRunId` for a workflow that stopped mid-way).
 
+## Sharing a game outside the group
+
+Your teammates did not sign up to be on the internet. Two tools make a public copy of any output:
+
+- `pipeline/blur_faces.py <in> <out> --keep-user` blurs every face except the user's (face detector on every frame, plus the head zone of every tracked person, plus the stored "is this the user?" model to leave yours sharp; when unsure it blurs). Works on videos and on single images.
+- `BB_BLUR_OTHERS=1 python pipeline/stats_poster.py` renders the box score with every photo blurred except the user's.
+
 ## Honest limits
 
 - It is a workflow, not an app. A game is an evening of laptop time plus a few hours of agent time, and you confirm names and Top 10 picks on pages it builds.
